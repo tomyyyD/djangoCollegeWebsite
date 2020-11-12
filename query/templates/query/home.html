@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ title }}</title>
+        {% load static %}
+        <link rel='stylesheet' type='text/css' href="{% static 'query/style.css' %}">
+    </head>
+    <body>
+        <div>
+            <h1>Select a college from the list below!</h1>
+        </div>
+
+        <div>
+            {% if Colleges %}
+            <form action="{% url 'searchResults' %}" method="get">
+                <input name='q' type="text" placeholder="Search...">
+            </form>
+            <span class="collegeButtonContainer">
+                <p class="collegeSummary">Name</p>
+                <p class="collegeSummary">Acceptance Rate</p>
+                <p class="collegeSummary">School Year</p>
+            </span>
+                <div class="collegeList">
+                    <script>
+                        year = document.getElementById("yearSelect").value
+                    </script>
+                    {% for college in Colleges %}
+                        <span class="collegeButtonContainer">
+                            <a class='collegeButton' href='{% url "details" college.id %}'>{{college.name}}</a>
+                            <p class="collegeSummary">{{ college.totalAcceptRate }}</p>
+                            <P class="collegeSummary">{{ college.year }}</P>
+                        </span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>There are no colleges available at the moment</p>
+            {% endif %}                
+        </div>
+    </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ title }}</title>
+        {% load static %}
+        <link rel='stylesheet' type='text/css' href="{% static 'query/style.css' %}">
+    </head>
+    <body>
+        <div class='collegeData menu'>
+            <a href="/" class="homeButton">Home</a>
+            <a href="/" class="homeButton">Yort</a>
+            <a href="/" class="homeButton">Yoink</a>
+        </div>
+        <h1>College Name: {{ college.name }}</h1>
+        <h2>School year: {{ college.year }}</h2>
+        <p>Student to faculty ratio: {{college.studentFacultyRatio}}</p>
+        <div class="collegeData percentages">
+            <div class="dataGroup">
+                <h3>Acceptance Statistics</h3>
+                <p>The percentage of applied students that were accepted.</p>
+                <p>Total Acceptance Rate: {{ college.totalAcceptRate }}%</p>
+                <p>Male Acceptance Rate: {{ college.maleAcceptRate }}%</p>
+                <p>Female Acceptance Rate: {{ college.femaleAcceptRate }}%</p>    
+            </div>
+            <div class='dataGroup'>
+                <h3>Yield Statistics</h3>
+                <p>Yield is the percent of accepted students that attend the university.</p>
+                <p>Total Yield: {{college.totalYield}}%</p>
+                <p>Male Yield: {{college.maleYield}}%</p>
+                <p>Female Yield: {{college.femaleYield}}%</p>
+            </div>    
+        </div>
+
+        <div class="collegeData applicants">
+            <div class="dataGroup">
+                <h3>Application Statistics</h3>
+                <p>Applications are the number of students that applied to the university.</p>
+                <p>Total Applications: {{college.totalApps }}</p>
+                <p>Male Applications: {{college.maleApps }}</p>
+                <p>Female Applications: {{college.femaleApps }}</p>
+            </div>
+            <div class="dataGroup">
+                <h3>Admission Statistics</h3>
+                <p>Admissions are the number of students that are accepted into the university.</p>
+                <p>Total Admissions: {{college.totalAdmits }}</p>
+                <p>Male Admissions: {{college.maleAdmits }}</p>
+                <p>Female Admissions: {{college.femaleAdmits }}</p>
+            </div>    
+            <div class="dataGroup">
+                <h3>Enrollment Statistics</h3>
+                <p>Enrollment is the number of accepted students that attend the university.</p>
+                <p>Total Enrolled: {{college.totalEnrolled }}</p>
+                <p>Male Enrolled: {{college.maleEnrolled }}</p>
+                <p>Female Enrolled: {{college.femaleEnrolled }}</p>
+            </div>    
+        </div>
+
+        <div class='collegeData scores'>
+            <div class='dataGroup'>
+                <h3>SAT Scores</h3>
+                <p>SAT writing middle 50%: {{ college.satWriting25th }} - {{college.satWriting75th}}</p>
+                <p>SAT math middle 50%: {{ college.satMath25th }} - {{college.satMath75th}}</p>
+                <p>SAT cumulative middle 50%: {{college.satTotal25th}} - {{college.satTotal75th}} </p>
+            </div>
+            <div class='dataGroup'>
+                <h3>ACT Scores</h3>
+                <p>ACT writing middle 50%: {{ college.actEnglish25th }} - {{college.actEnglish75th}}</p>
+                <p>ACT math middle 50%: {{ college.actMath25th }} - {{college.actMath75th}}</p>
+                <p>ACT cumulative middle 50%: {{college.actTotal25th}} - {{college.actTotal75th}} </p>
+            </div>
+        </div>
+
+        <div class='collegeData ethinic'>
+            <div class='dataGroup'>
+                <h3>Ethinic Breakdown of Undergraduates</h3>
+                <p>International Students: {{college.internationalStudents}}</p>
+                <p>Hispanic Students: {{college.hispanicStudents}}</p>
+                <p>African-American, non-Hispanic students: {{college.blackStudents}}</p>
+                <p>White, non-Hispanic students: {{college.whiteStudents}}</p>
+                <p>American Indian or Alaka Native, non-Hispanic students: {{college.nativeStudents}}</p>
+                <p>Asian, non-Hispanic students: {{ college.asianStudents}}</p>
+                <p>Native Hawaiian or Pacific Islander, non-hispanic: {{college.pacificStudents}}</p>
+                <p>Two or more races, non-Hispanic {{college.mixedStudents}}</p>
+                <p>Unknown Ethnicity students: {{college.unknownStudents}}</p>
+            </div>
+            <div class='dataGroup pie'>
+                
+            </div>
+        </div>
+
+        <div class='collegeData waitlist'>
+            <div class='dataGroup'>
+                <h3>Wait List Data</h3>
+                <h3>This data may not appear because not all schools choose to publish this data</h3>
+                {% if college.offeredWaitlist == 0 and college.tookWaitlist == 0 and college.admittedWaitlist == 0%}
+                    <p>This Data was not published by this school</p>
+                {% elif college.offeredWaitlist == 0 and college.tookWaitlist == 0 %}
+                    <p>Students accepted from waitlist: {{college.admittedWaitlist}}</p>
+                {% else %}
+                    <p>Students Offered a wait-list spot: {{college.offeredWaitlist}}</p>
+                    <p>Students that took their spot on the wait-list: {{college.tookWaitlist}}</p>
+                    <p>Students that were admitted from the wait-list: {{college.admittedWaitlist}}</p>
+                    <p>wait-list acceptance rate: {{college.waitlistAcceptRate}}%</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class='collegeData finance'>
+            <div class='dataGroup'>
+                <h3>Costs</h3>
+                <p>Tuition Cost: ${{college.tuitionCost}}</p>
+                <p>Room Cost: ${{college.roomCost}}</p>
+                <p>Board Cost: ${{college.boardCost}}</p>
+                <p>Required Fees Cost: ${{college.requiredFeeCost}}</p>
+                <h3>Total Cost: ${{college.totalCost}}</h3>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>All data was gathered through the Common Data Set and published by the universities</p>
+        </div>
+    </body>
+</html>
