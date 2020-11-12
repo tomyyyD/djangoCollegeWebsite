@@ -9,8 +9,9 @@
     <body>
         <div class='collegeData menu'>
             <a href="/" class="homeButton">Home</a>
-            <a href="/" class="homeButton">Yort</a>
-            <a href="/" class="homeButton">Yoink</a>
+            <form action="{% url 'searchResults' %}" method="get">
+                <input name='q' type="text" placeholder="Search...">
+            </form>
         </div>
         <h1>College Name: {{ college.name }}</h1>
         <h2>School year: {{ college.year }}</h2>
