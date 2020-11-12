@@ -68,6 +68,7 @@ class College(models.Model):
     athConference = models.CharField(max_length=50, default='', blank=True)
 
     #finance stuff
+    inStateTuitionCost = models.IntegerField(default=0, blank=True)
     tuitionCost = models.IntegerField(default=0)
     roomCost = models.IntegerField(default=0)
     boardCost = models.IntegerField(default=0)
