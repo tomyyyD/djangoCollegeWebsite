@@ -7,30 +7,29 @@
         <link rel='stylesheet' type='text/css' href="{% static 'query/style.css' %}">
     </head>
     <body>
-        <div>
+        <div class="headingContainer">
             <h1>Select a college from the list below!</h1>
         </div>
 
-        <div>
-            {% if Colleges %}
+        <div class="container">
             <form action="{% url 'searchResults' %}" method="get">
                 <input name='q' type="text" placeholder="Search...">
                 <button>Search</button>
             </form>
-            <span class="collegeButtonContainer">
-                <p class="collegeSummary">Name</p>
+            <span class="collegeButtonContainer header">
+                <p class="collegeButton">Name</p>
                 <p class="collegeSummary">Acceptance Rate</p>
                 <p class="collegeSummary">School Year</p>
+                <p class="collegeSummary">Total Cost</p>
             </span>
+            {% if Colleges %}
                 <div class="collegeList">
-                    <script>
-                        year = document.getElementById("yearSelect").value
-                    </script>
                     {% for college in Colleges %}
                         <span class="collegeButtonContainer">
                             <a class='collegeButton' href='{% url "details" college.id %}'>{{college.name}}</a>
                             <p class="collegeSummary">{{ college.totalAcceptRate }}</p>
                             <P class="collegeSummary">{{ college.year }}</P>
+                            <P class="collegeSummary">${{ college.totalCost }}</P>
                         </span>
                     {% endfor %}
                 </div>

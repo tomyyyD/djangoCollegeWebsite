@@ -4,6 +4,22 @@ body{
     
 }
 
+.headingContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    margin: 0 5%;
+    border: 1px lightgray solid;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .collegeData{
     display: flex;
     flex-direction: row;
@@ -39,26 +55,32 @@ body{
 }
 
 .collegeList{
-    background-color: lightblue;
+    /* background-color: lightblue; */
+    width: 100%;
+    height: 82vh;
+    overflow: scroll;
 }
 
 .collegeButtonContainer{
     display: flex;
     flex-direction: row;
     justify-content: left;
-    width: 100%;
+    width: 95%;
     align-items: center;
-    border: solid 1px black;
+    /* border: solid 1px black; */
     padding-left: 5%;
+    border-bottom: 1px lightgray solid;
 }
 
 .collegeButton{
-    width: 10%;
+    width: 20%;
 }
 
-
 .collegeSummary{
-    width: 10%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .dataGroup{

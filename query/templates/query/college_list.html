@@ -10,29 +10,29 @@
             <h1>Select a college from the list below!</h1>
         </div>
 
+        <div class="container">
+            <form action="{% url 'searchResults' %}" method="get">
+                <input name='q' type="text" placeholder="Search...">
+                <button>Search</button>
+                <a href="/">Clear Search</a>
+            </form>
+            <span class="collegeButtonContainer header">
+                <p class="collegeButton">Name</p>
+                <p class="collegeSummary">Acceptance Rate</p>
+                <p class="collegeSummary">School Year</p>
+                <p class="collegeSummary">Total Cost</p>
+            </span>
 
-        <form action="{% url 'searchResults' %}" method="get">
-            <input name='q' type="text" placeholder="Search...">
-        </form>
-        <span class="collegeButtonContainer">
-            <p class="collegeSummary">Name</p>
-            <p class="collegeSummary">Acceptance Rate</p>
-            <p class="collegeSummary">School Year</p>
-        </span>
+            <div class="collegeList">
+                {% for college in object_list %}
+                    <span class="collegeButtonContainer">
+                        <a class='collegeButton' href='{% url "details" college.id %}'>{{college.name}}</a>
+                        <p class="collegeSummary">{{ college.totalAcceptRate }}</p>
+                        <P class="collegeSummary">{{ college.year }}</P>
+                    </span>
+                {% endfor %}
+            </div>
+        </div>
 
-        {% for college in object_list %}
-                <div class="collegeList">
-                    <script>
-                        year = document.getElementById("yearSelect").value
-                    </script>
-                        <span class="collegeButtonContainer">
-                            <a class='collegeButton' href='{% url "details" college.id %}'>{{college.name}}</a>
-                            <p class="collegeSummary">{{ college.totalAcceptRate }}</p>
-                            <P class="collegeSummary">{{ college.year }}</P>
-                        </span>
-                </div>
-
-        {% endfor %}
-        <a href="/">Home</a>
     </body>
 </html>
