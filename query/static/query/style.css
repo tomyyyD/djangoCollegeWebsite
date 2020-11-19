@@ -1,7 +1,20 @@
+html{
+    font-family: sans-serif;
+
+}
+
 body{
     margin: 0px;
     padding: 0px;
-    
+    background-color: rgb(137, 160, 192);
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
 }
 
 .headingContainer{
@@ -9,15 +22,41 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
+    margin: 0 5%;
+    width: 90%;
+}
+
+.searchContainer{
+    display: flex;
+}
+
+.searchBar{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 0;
+    font-size: 1.5em;
+    margin-right: 0;
+}
+
+.searchButton{
+    font-size: 1.5em;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 0;
+    margin-left: 0;
 }
 
 .container{
     margin: 0 5%;
-    border: 1px lightgray solid;
-    border-radius: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: white;
+    width: 90%;
 }
 
 .collegeData{
@@ -45,20 +84,21 @@ body{
     padding: 15px 25px 15px;
     margin-left: 5px;
     margin-right: 5px;
-    transition-duration: 0.5s;
+    transition-duration: 200ms;
     text-align: center;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 .homeButton:hover{
-    background-color: aqua;
+    background-color: white;
 }
 
 .collegeList{
     /* background-color: lightblue; */
     width: 100%;
     height: 82vh;
-    overflow: scroll;
+    overflow-y: scroll;
+    /* background-color: lightblue; */
 }
 
 .collegeButtonContainer{
@@ -69,11 +109,24 @@ body{
     align-items: center;
     /* border: solid 1px black; */
     padding-left: 5%;
-    border-bottom: 1px lightgray solid;
+    border-bottom: 1px rgb(137, 160, 192) solid;
+}
+
+.topContainer{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px rgb(137, 160, 192) solid;
+}
+
+.header{
+    width: calc(95% - 17px);
+    border: 0;
 }
 
 .collegeButton{
     width: 20%;
+    text-decoration: underline;
+    /* color: white */
 }
 
 .collegeSummary{

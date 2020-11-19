@@ -21,18 +21,22 @@
                 <p class="collegeSummary">Acceptance Rate</p>
                 <p class="collegeSummary">School Year</p>
                 <p class="collegeSummary">Total Cost</p>
+                <p class="collegeSummary">SAT Average</p>
             </span>
 
             <div class="collegeList">
-                {% for college in object_list %}
+                <div class="buffer">
+                    {% for college in object_list %}
                     <span class="collegeButtonContainer">
                         <a class='collegeButton' href='{% url "details" college.id %}'>{{college.name}}</a>
                         <p class="collegeSummary">{{ college.totalAcceptRate }}</p>
                         <P class="collegeSummary">{{ college.year }}</P>
+                        <p class="collegeSummary">{{college.totalCost}}</p>
+                        <p class="collegeSummary">{{college.satTotal25th}} - {{college.satTotal75th}}</p>
                     </span>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
-
     </body>
 </html>
