@@ -37,6 +37,7 @@ body{
     border: 0;
     font-size: 1.5em;
     margin-right: 0;
+    padding: 10px;
 }
 
 .searchButton{
@@ -110,6 +111,7 @@ body{
     /* border: solid 1px black; */
     padding-left: 5%;
     border-bottom: 1px rgb(137, 160, 192) solid;
+    min-height: 60px;
 }
 
 .topContainer{
