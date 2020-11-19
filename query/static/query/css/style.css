@@ -183,6 +183,13 @@ body{
         display: flex;
         flex-direction: column;
     }
+    .headingContainer{
+        top:0;
+        margin: 5%;
+    }
+    .tableContainer{
+        margin: 5%;
+    }
 
 }
 
