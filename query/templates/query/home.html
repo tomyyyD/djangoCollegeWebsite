@@ -4,20 +4,20 @@
         <meta charset="utf-8">
         <title>{{ title }}</title>
         {% load static %}
-        <link rel='stylesheet' type='text/css' href="{% static 'query/style.css' %}">
+        <link rel='stylesheet' type='text/css' href="{% static 'query/css/style.css' %}">
         <script type="text/javascript" src="{% static 'query/scripts.js' %}"></script>
     </head>
     <body>
         <span class="content">
             <div class="headingContainer">
-                <h1>Select a college from the list below!</h1>
+                <h1 id="title">Select a college from the list <br><br>Or<br><br>Search for a college</h1>
                 <form class="searchContainer" action="{% url 'searchResults' %}" method="get">
                     <input class="searchBar" name='q' type="text" placeholder="Search...">
                     <button class="searchButton">Search</button>
                 </form>    
             </div>
     
-            <div class="container">
+            <div class="tableContainer">
                 <div class="topContainer">
                     <span class="collegeButtonContainer header">
                         <p class="collegeButton">Name</p>

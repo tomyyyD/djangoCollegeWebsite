@@ -48,7 +48,7 @@ body{
     margin-left: 0;
 }
 
-.container{
+.tableContainer{
     margin: 0 5%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -176,4 +176,16 @@ body{
 
 .finance{
     background-color: lightgray;
+}
+
+@media (max-width:1200px){
+    .content{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+#title{
+    text-align: center;
 }
