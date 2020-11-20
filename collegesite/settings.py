@@ -124,7 +124,7 @@ USE_TZ = True
 
 PROJECT_ROOT   =   os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_URL = '/query/static'
+STATIC_URL = '/query/static/'
 STATICFILES_DIRS = (
     "/qeury/static/query/",
 )
