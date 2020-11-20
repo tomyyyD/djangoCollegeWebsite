@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'trzz*@=5sis*#!lyompabl-2a8r7st%l22!sc4hj2i&!80a$m3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['https://git.heroku.com/college-cds-data.git']
 
