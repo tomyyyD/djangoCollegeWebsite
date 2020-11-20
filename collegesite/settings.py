@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'collegesite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
 
@@ -129,8 +129,6 @@ STATIC_URL = '/static/'
 # )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
 
 prod_db = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
