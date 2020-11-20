@@ -34,13 +34,13 @@ ALLOWED_HOSTS = ['https://git.heroku.com/college-cds-data.git']
 # Application definition
 
 INSTALLED_APPS = [
-    'query.apps.QueryConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'query.apps.QueryConfig',
 ]
 
 MIDDLEWARE = [
