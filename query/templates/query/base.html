@@ -10,7 +10,8 @@
     <body>
         <span class="content">
             <div class="headingContainer">
-                <h1 id="title">Select a college from the list <br><br>Or<br><br>Search for a college</h1>
+                <h1 class="titleText" id="title">Select a college from the list <br>or<br>Search for a college</h1>
+                <h1 class="titleText">then<br>Find detailed information for any college on the list</h1>
                 <form class="searchContainer" action="{% url 'searchResults' %}" method="get">
                     <input class="searchBar" name='q' type="text" placeholder="Search...">
                     <button class="searchButton">Search</button>
@@ -18,6 +19,7 @@
                 <div style="padding-top: 10px;">
                     <a class="homeButton" href="/">Clear Search</a>
                 </div>
+
             </div>
     
             <div class="tableContainer">
