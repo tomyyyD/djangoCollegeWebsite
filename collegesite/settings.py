@@ -124,10 +124,10 @@ USE_TZ = True
 
 PROJECT_ROOT   =   os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_URL = '/query/static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    "/query/static/query/css/",
-    "/query/static/query/JS/",
+    os.path.join(PROJECT_ROOT, "static/query/css"),
+    os.path.join(PROJECT_ROOT, "static/query/JS"),
 )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
