@@ -27,4 +27,5 @@ class SearchResults(ListView):
         object_list = College.objects.filter(
             Q(name__icontains=query) | Q(nickname__icontains=query)
         )
-        return object_list
+        college_list = object_list.order_by("name")
+        return college_list

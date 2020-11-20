@@ -5,7 +5,7 @@
         <title>{{ title }}</title>
         {% load static %}
         <link rel='stylesheet' type='text/css' href="{% static 'query/css/style.css' %}">
-        <script type="text/javascript" src="{% static 'query/scripts.js' %}"></script>
+        <script type="text/javascript" src="{% static 'query/JS/scripts.js' %}"></script>
     </head>
     <body>
         <span class="content">
@@ -14,7 +14,10 @@
                 <form class="searchContainer" action="{% url 'searchResults' %}" method="get">
                     <input class="searchBar" name='q' type="text" placeholder="Search...">
                     <button class="searchButton">Search</button>
-                </form>    
+                </form>
+                <div style="padding-top: 10px;">
+                    <a class="homeButton" href="/">Clear Search</a>
+                </div>
             </div>
     
             <div class="tableContainer">

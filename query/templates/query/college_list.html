@@ -5,7 +5,7 @@
         <a class='collegeButton' href='{% url "details" college.id %}'>{{college.name}}</a>
         <p class="collegeSummary">{{ college.totalAcceptRate }}</p>
         <P class="collegeSummary">{{ college.year }}</P>
-        <p class="collegeSummary">{{college.totalCost}}</p>
+        <p class="collegeSummary">${{college.totalCost}}</p>
         <p class="collegeSummary">{{college.satTotal25th}} - {{college.satTotal75th}}</p>
     </span>
     {% endfor %}
