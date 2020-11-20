@@ -126,7 +126,8 @@ PROJECT_ROOT   =   os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/query/static/'
 STATICFILES_DIRS = (
-    "/qeury/static/query/",
+    "/query/static/query/css/",
+    "/query/static/query/JS/",
 )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
