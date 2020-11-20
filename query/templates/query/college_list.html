@@ -1,42 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>{{ title }}</title>
-        {% load static %}
-        <link rel='stylesheet' type='text/css' href="{% static 'query/css/style.css' %}">
-    </head>
-    <body>
-        <div class="headingContainer">
-            <h1>Select a college from the list below!</h1>
-        </div>
-
-        <div class="container">
-            <form action="{% url 'searchResults' %}" method="get">
-                <input name='q' type="text" placeholder="Search...">
-                <button>Search</button>
-                <a href="/">Clear Search</a>
-            </form>
-            <span class="collegeButtonContainer header">
-                <p class="collegeButton">Name</p>
-                <p class="collegeSummary">Acceptance Rate</p>
-                <p class="collegeSummary">School Year</p>
-                <p class="collegeSummary">Total Cost</p>
-                <p class="collegeSummary">SAT Average</p>
-            </span>
-
-            <div class="collegeList">
-                <div class="buffer">
-                    {% for college in object_list %}
-                    <span class="collegeButtonContainer">
-                        <a class='collegeButton' href='{% url "details" college.id %}'>{{college.name}}</a>
-                        <p class="collegeSummary">{{ college.totalAcceptRate }}</p>
-                        <P class="collegeSummary">{{ college.year }}</P>
-                        <p class="collegeSummary">{{college.totalCost}}</p>
-                        <p class="collegeSummary">{{college.satTotal25th}} - {{college.satTotal75th}}</p>
-                    </span>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+{% extends "query/base.html" %}
+{% block content %}
+    {% for college in object_list %}
+    <span class="collegeButtonContainer">
+        <a class='collegeButton' href='{% url "details" college.id %}'>{{college.name}}</a>
+        <p class="collegeSummary">{{ college.totalAcceptRate }}</p>
+        <P class="collegeSummary">{{ college.year }}</P>
+        <p class="collegeSummary">{{college.totalCost}}</p>
+        <p class="collegeSummary">{{college.satTotal25th}} - {{college.satTotal75th}}</p>
+    </span>
+    {% endfor %}
+{% endblock content %}
