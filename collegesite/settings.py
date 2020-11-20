@@ -26,7 +26,7 @@ SECRET_KEY = 'trzz*@=5sis*#!lyompabl-2a8r7st%l22!sc4hj2i&!80a$m3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['college-cds-data.herokuapp.com']
+ALLOWED_HOSTS = ['https://git.heroku.com/college-cds-data.git']
 
 
 # Application definition
