@@ -138,7 +138,7 @@ body{
     width: 95%;
     align-items: center;
     padding-left: 5%;
-    border-bottom: 1px #def2f1 solid;
+    border-bottom: 1px #3aafa9 solid;
     min-height: 60px;
 }
 
@@ -149,7 +149,7 @@ body{
 .topContainer{
     display: flex;
     width: 100%;
-    border-bottom: 1px #def2f1 solid;
+    border-bottom: 1px #3aafa9 solid;
 }
 
 .header{
