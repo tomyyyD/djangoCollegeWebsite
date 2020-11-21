@@ -1,8 +1,6 @@
-<!-- {% extends "query/base.html" %}
-{% block content%} -->
-
-<p>do it work tho?</p>
-    <!-- {% if Colleges %}
+{% extends "query/base.html" %}
+{% block content%}
+    {% if Colleges %}
         {% for college in Colleges %}
             <span class="collegeButtonContainer">
                 <a class='collegeButton' href='{% url "details" college.id %}'>{{college.name}}</a>
@@ -24,5 +22,4 @@
     {% else %}
         <p>There are no colleges available at the moment</p>
     {% endif %}                
- -->
-<!-- {% endblock content %} -->
+{% endblock content %}
