@@ -1,1 +1,1 @@
-web: gunicorn collegesite.wsgi --preload --log-file -
+web: gunicorn collegesite.wsgi --log-file -

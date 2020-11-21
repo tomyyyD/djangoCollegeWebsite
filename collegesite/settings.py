@@ -21,10 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'trzz*@=5sis*#!lyompabl-2a8r7st%l22!sc4hj2i&!80a$m3'
+#SECRET_KEY = 'trzz*@=5sis*#!lyompabl-2a8r7st%l22!sc4hj2i&!80a$m3'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'trzz*@=5sis*#!lyompabl-2a8r7st%l22!sc4hj2i&!80a$m3')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+
 
 ALLOWED_HOSTS = ['https://git.heroku.com/college-cds-data.git']
 
@@ -128,8 +131,8 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 import dj_database_url
-prod_db = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 import django_heroku
 django_heroku.settings(locals())
