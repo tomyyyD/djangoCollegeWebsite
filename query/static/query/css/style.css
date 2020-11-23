@@ -221,8 +221,11 @@ body{
     }
     .tableContainer{
         margin: 3%;
-    }
 
+    }
+    .collegeButtonContainer{
+        font-size: 1.2em;
+    }
 }
 
 #title{

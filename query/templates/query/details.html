@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>{{ title }}</title>
+        <title>{{ college.name }}</title>
         {% load static %}
         <link rel='stylesheet' type='text/css' href="{% static 'query/css/style.css' %}">
     </head>
@@ -47,7 +47,7 @@
                 <p>Total Admissions: {{college.totalAdmits }}</p>
                 <p>Male Admissions: {{college.maleAdmits }}</p>
                 <p>Female Admissions: {{college.femaleAdmits }}</p>
-            </div>    
+            </div>
             <div class="dataGroup">
                 <h3>Enrollment Statistics</h3>
                 <p>Enrollment is the number of accepted students that attend the university.</p>
