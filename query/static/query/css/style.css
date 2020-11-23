@@ -217,14 +217,14 @@ body{
     }
     .headingContainer{
         top:0;
-        margin: 3%;
+        margin: 3% 1% 3%;
     }
     .tableContainer{
-        margin: 3%;
+        margin: 3% 1% 3%;
 
     }
     .collegeButtonContainer{
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
 }
 
