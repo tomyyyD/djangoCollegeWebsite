@@ -77,7 +77,7 @@ class College(models.Model):
         return self.tuitionCost + self.roomCost + self.boardCost + self.requiredFeeCost
 
     studentFacultyRatio = models.CharField(max_length=50, default="", blank=True)
-#adding an epic comment to commit to GitHub
+    
     #totals
     def totalApps(self):
         return self.maleApps + self.femaleApps
