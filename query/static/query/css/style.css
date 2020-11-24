@@ -98,7 +98,7 @@ body{
 
 .menu{
     width: 100%;
-    background-color: lightslategrey;
+    background-color: #2b7a78;
     padding-top: 5px;
     padding-bottom: 5px;
     flex-direction: left;
@@ -186,28 +186,16 @@ body{
     padding-bottom: 0;
 }
 
-.percentages{
+.one{
     background-color: lightblue;
 }
 
-.applicants{
-    background-color: lightcyan;
+.two{
+    background-color: #def2f1;
 }
 
-.scores{
-    background-color: lightgoldenrodyellow;
-}
-
-.ethinic{
-    background-color: lightgreen;
-}
-
-.waitlist{
-    background-color: lightpink;
-}
-
-.finance{
-    background-color: lightgray;
+.three{
+    background-color: white;
 }
 
 @media (max-width:1200px){

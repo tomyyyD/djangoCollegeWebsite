@@ -13,12 +13,14 @@
                 <input name='q' type="text" placeholder="Search...">
             </form>
         </div>
-        <div class="dataGroup">
-            <h1>College Name: {{ college.name }}</h1>
-            <h2>School year: {{ college.year }}</h2>
-            <p>Student to faculty ratio: {{college.studentFacultyRatio}}</p>    
+        <div class="collegeData one">
+            <div class="dataGroup">
+                <h1>College Name: {{ college.name }}</h1>
+                <h2>School year: {{ college.year }}</h2>
+                <p>Student to faculty ratio: {{college.studentFacultyRatio}}</p>    
+            </div>    
         </div>
-        <div class="collegeData percentages">
+        <div class="collegeData two">
             <div class="dataGroup">
                 <h3>Acceptance Statistics</h3>
                 <p>The percentage of applied students that were accepted.</p>
@@ -35,7 +37,7 @@
             </div>    
         </div>
 
-        <div class="collegeData applicants">
+        <div class="collegeData three">
             <div class="dataGroup">
                 <h3>Application Statistics</h3>
                 <p>Applications are the number of students that applied to the university.</p>
@@ -59,7 +61,7 @@
             </div>    
         </div>
 
-        <div class='collegeData scores'>
+        <div class='collegeData two'>
             <div class='dataGroup'>
                 <h3>SAT Scores</h3>
                 <p>SAT writing middle 50%: {{ college.satWriting25th }} - {{college.satWriting75th}}</p>
@@ -74,7 +76,7 @@
             </div>
         </div>
 
-        <div class='collegeData ethinic'>
+        <div class='collegeData one'>
             <div class='dataGroup'>
                 <h3>Ethinic Breakdown of Undergraduates</h3>
                 <p>International Students: {{college.internationalStudents}}</p>
@@ -92,7 +94,7 @@
             </div>
         </div>
 
-        <div class='collegeData waitlist'>
+        <div class='collegeData two'>
             <div class='dataGroup'>
                 <h3>Wait List Data</h3>
                 <h3>This data may not appear because not all schools choose to publish this data</h3>
@@ -109,7 +111,7 @@
             </div>
         </div>
 
-        <div class='collegeData finance'>
+        <div class='collegeData three'>
             <div class='dataGroup'>
                 <h3>Costs</h3>
                 <p>Tuition Cost: ${{college.tuitionCost}}</p>
