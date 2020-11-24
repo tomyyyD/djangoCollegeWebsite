@@ -18,6 +18,9 @@ def details(req, ID):
     college = get_object_or_404(College, pk=ID)
     return render(req, 'query/details.html', {'college': college})
 
+def About(req):
+    return render(req, 'query/about.html')
+
 class SearchResults(ListView):
     model = College
     template_name='college_list.html'
@@ -29,3 +32,4 @@ class SearchResults(ListView):
         )
         college_list = object_list.order_by("name")
         return college_list
+
