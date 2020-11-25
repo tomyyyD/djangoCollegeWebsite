@@ -3,9 +3,12 @@
     <head>
         <meta charset="utf-8">
         <title>{{ title }}</title>
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
         {% load static %}
         <link rel='stylesheet' type='text/css' href="{% static 'query/css/style.css' %}">
-        <script type="text/javascript" src="{% static 'query/JS/scripts.js' %}"></script>
+
     </head>
     <body>
         <span class="content">
@@ -13,7 +16,7 @@
                 <h1 class="titleText" id="title">Select a college from the list <br>or<br>Search for a college</h1>
                 <h1 class="titleText">then<br>Find detailed information for any college on the list</h1>
                 <form class="searchContainer" action="{% url 'searchResults' %}" method="get">
-                    <input class="searchBar" name='q' type="text" placeholder="Search...">
+                    <input id="search" class="searchBar" name='q' type="text" placeholder="Search...">
                     <button class="searchButton">Search</button>
                 </form>
                 <div style="padding-top: 10px;">
@@ -38,5 +41,15 @@
             </div>
     
         </span>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript" src="{% static 'query/JS/scripts.js' %}"></script>
+        <script>            
+            $( function() {
+                $("#search").autocomplete({
+                    source: "{% url 'query-home' %}"
+                })
+            })
+        </script>
     </body>
 </html>

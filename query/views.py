@@ -3,11 +3,18 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, ListView
 from django.db.models import Q
+from django.http import JsonResponse
 
 from .models import College
 
 # Create your views here.
 def home (req):
+    if 'term' in req.GET:
+        qs = College.objects.filter(name__istartswith=req.GET.get("term"))
+        names = list()
+        for college in qs:
+            names.append(college.name)
+        return JsonResponse(names, safe=False)
     context = {
         'Colleges': College.objects.order_by('name'),
         'title': 'College Site Home',
