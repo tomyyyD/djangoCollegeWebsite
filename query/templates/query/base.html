@@ -13,7 +13,7 @@
     <body>
         <span class="content">
             <div class="headingContainer">
-                <h1 class='titleText'>Search for a college below or</h1>
+                <h1 class='titleText searchText'>Search for a college below,</h1>
                 <form class="searchContainer" action="{% url 'searchResults' %}" method="get" autocomplete="off">
                     <input id="search" class="searchBar" name='q' type="text" placeholder="Search..." list="collegeSet">
                     <datalist id="collegeSet">
@@ -24,10 +24,9 @@
                     <a class="homeButton" href="/">Clear</a>
 
                 </form>
-                <div style="padding: 10px;">
-                </div>
-                <h1 class="titleText" id="title">Select a college from the list to the right</h1>
-                <h1 class="titleText">To find detailed information for any college on the list</h1>
+                <h1 class="titleText">or</h1>
+                <h1 class="titleText" id="title">select a college from the list on the right</h1>
+                <h1 class="titleText">to find detailed information for any college on the list</h1>
 
             </div>
     
