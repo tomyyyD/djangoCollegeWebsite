@@ -13,7 +13,7 @@
     <body>
         <span class="content">
             <div class="headingContainer">
-                <h1 class="titleText" id="title">"Select a college from the list to the right or <br>Search for a college below"</h1>
+                <h1 class="titleText" id="title">Select a college from the list to the right or <br>Search for a college below</h1>
                 <h1 class="titleText">then<br>Find detailed information for any college on the list</h1>
                 <form class="searchContainer" action="{% url 'searchResults' %}" method="get" autocomplete="off">
                     <input id="search" class="searchBar" name='q' type="text" placeholder="Search...">
@@ -43,12 +43,8 @@
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript" src="{% static 'query/JS/scripts.js' %}"></script>
-        <script>            
-            $( function() {
-                $("#search").autocomplete({
-                    source: "{% url 'query-home' %}"
-                })
-            })
+        <script>
+            const path = "{% url 'query-home' %}"
         </script>
     </body>
 </html>
