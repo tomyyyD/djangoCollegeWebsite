@@ -4,10 +4,10 @@ function sizing(){
     console.log(window.innerWidth)
     if (window.innerWidth > 1200){
         console.log("desktop")
-        title.innerText = "Select a college from the list to the right or \rSearch for a college below"
+        title.innerText = "Select a college from the list to the right"
     }else{
         console.log("mobile")
-        title.innerText = "Select a college from the list below or \rSearch for a college below"
+        title.innerText = "Select a college from the list below"
     }
 }
 

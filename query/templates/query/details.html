@@ -8,7 +8,6 @@
     </head>
     <body>
         <div class='collegeData menu'>
-            <a href="/" class="homeButton">Home</a>
             <form class="searchContainer top" action="{% url 'searchResults' %}" method="get" autocomplete="off">
                 <input class="searchBar menuSearch" name='q' type="text" placeholder="Search..." list=collegeSet>
                 <datalist id="collegeSet">
@@ -16,6 +15,7 @@
                         <option value="{{college.name}}">
                     {% endfor %}
                 </datalist>
+                <a href="/" class="homeButton">Home</a>
             </form>
         </div>
         <div class="collegeData one">
