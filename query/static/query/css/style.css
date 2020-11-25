@@ -75,20 +75,6 @@ body{
     width: 100%;
 }
 
-.searchButton{
-    font-size: 1.5em;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border: 0;
-    margin-left: 0;
-    transition-duration: 200ms;
-    background-color: #def2f1;
-}
-.searchButton:hover{
-    background-color: #17252a;
-    color: white;
-}
-
 .tableContainer{
     margin: 0 5%;
     border-top-left-radius: 10px;

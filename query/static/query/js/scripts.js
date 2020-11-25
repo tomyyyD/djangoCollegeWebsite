@@ -11,11 +11,5 @@ function sizing(){
     }
 }
 
-$( function() {
-    $("#search").autocomplete({
-        source: path
-    })
-})
-
 window.onload = sizing()
 window.addEventListener('resize', sizing)

@@ -10,7 +10,12 @@
         <div class='collegeData menu'>
             <a href="/" class="homeButton">Home</a>
             <form class="searchContainer top" action="{% url 'searchResults' %}" method="get" autocomplete="off">
-                <input class="searchBar menuSearch" name='q' type="text" placeholder="Search...">
+                <input class="searchBar menuSearch" name='q' type="text" placeholder="Search..." list=collegeSet>
+                <datalist id="collegeSet">
+                    {% for college in Colleges%}
+                        <option value="{{college.name}}">
+                    {% endfor %}
+                </datalist>
             </form>
         </div>
         <div class="collegeData one">
@@ -122,12 +127,7 @@
         <div class="footer">
             <p>All data was gathered through the Common Data Set and published by the universities</p>
         </div>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script type="text/javascript" src="{% static 'query/JS/scripts.js' %}"></script>
     </body>
-    <script>
-        $( function() {
-            $("#search").autocomplete({
-                source: "{% url 'query-home' %}"
-            })
-        })
-    </script>
 </html>

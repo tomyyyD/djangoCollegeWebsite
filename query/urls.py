@@ -6,6 +6,6 @@ from .views import SearchResults
 urlpatterns = [
     path('', views.home, name='query-home'),
     path('<int:ID>/', views.details, name='details'),
-    path('search/', SearchResults.as_view(), name='searchResults'),
+    path('search/', views.SearchResults, name='searchResults'),
     path('about/', views.About, name='about')
 ]
