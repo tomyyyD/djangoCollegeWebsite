@@ -178,8 +178,6 @@ body{
 .dataGroup{
     padding: 20px;
     width: 50%;
-    /* background-color: grey;
-    border: 1px solid black; */
 }
 
 .generalInfo{
@@ -217,6 +215,9 @@ body{
 
     }
     .collegeButtonContainer{
+        font-size: 1.5em;
+    }
+    .dataGroup{
         font-size: 1.5em;
     }
 }
