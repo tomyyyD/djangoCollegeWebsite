@@ -10,7 +10,7 @@ from .models import College
 # Create your views here.
 def home (req):
     if 'term' in req.GET:
-        qs = College.objects.filter(name__istartswith=req.GET.get("term"))
+        qs = College.objects.filter(name__icontains=req.GET.get("term"))
         names = list()
         for college in qs:
             names.append(college.name)
