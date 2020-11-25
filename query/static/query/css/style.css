@@ -178,7 +178,7 @@ body{
 
 .dataGroup{
     padding: 20px;
-    width: 100%;
+    width: 50%;
 }
 
 .generalInfo{
@@ -226,4 +226,32 @@ body{
 #title{
     text-align: center;
     font-size: 2em;
+}
+
+/* start animation */
+.intro{
+    background-color: #3aafa9;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-text{
+    color: rgb(233, 233, 233);
+    font-family:"Heebo", sans-serif;
+    font-size: 3rem;
+}
+
+.hide{
+    overflow: hidden;
+}
+
+.hide span{
+    transform: translateY(100%);
+    display: inline-block;
 }

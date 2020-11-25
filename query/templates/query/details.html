@@ -5,6 +5,7 @@
         <title>{{ college.name }}</title>
         {% load static %}
         <link rel='stylesheet' type='text/css' href="{% static 'query/css/style.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
     </head>
     <body>
         <div class='collegeData menu'>
@@ -20,18 +21,20 @@
         </div>
         <div class="collegeData one">
             <div class="dataGroup">
-                <h1>College Name: {{ college.name }}</h1>
+                <h1>{{ college.name }}</h1>
                 <h2>School year: {{ college.year }}</h2>
                 <p>Student to faculty ratio: {{college.studentFacultyRatio}}</p>    
             </div>    
         </div>
         <div class="collegeData two">
             <div class="dataGroup">
-                <h3>Acceptance Statistics</h3>
-                <p>The percentage of applied students that were accepted.</p>
-                <p>Total Acceptance Rate: {{ college.totalAcceptRate }}%</p>
-                <p>Male Acceptance Rate: {{ college.maleAcceptRate }}%</p>
-                <p>Female Acceptance Rate: {{ college.femaleAcceptRate }}%</p>    
+                <div style="width: 50%;">
+                    <h3>Acceptance Statistics</h3>
+                    <p>The percentage of applied students that were accepted.</p>
+                    <p>Total Acceptance Rate: {{ college.totalAcceptRate }}%</p>
+                    <p>Male Acceptance Rate: {{ college.maleAcceptRate }}%</p>
+                    <p>Female Acceptance Rate: {{ college.femaleAcceptRate }}%</p>        
+                </div>
             </div>
             <div class='dataGroup'>
                 <h3>Yield Statistics</h3>
@@ -44,11 +47,13 @@
 
         <div class="collegeData three">
             <div class="dataGroup">
-                <h3>Application Statistics</h3>
-                <p>Applications are the number of students that applied to the university.</p>
-                <p>Total Applications: {{college.totalApps }}</p>
-                <p>Male Applications: {{college.maleApps }}</p>
-                <p>Female Applications: {{college.femaleApps }}</p>
+                <div style="width: 50%;">
+                    <h3>Application Statistics</h3>
+                    <p>Applications are the number of students that applied to the university.</p>
+                    <p>Total Applications: {{college.totalApps }}</p>
+                    <p>Male Applications: {{college.maleApps }}</p>
+                    <p>Female Applications: {{college.femaleApps }}</p>
+                </div>
             </div>
             <div class="dataGroup">
                 <h3>Admission Statistics</h3>
@@ -127,7 +132,28 @@
         <div class="footer">
             <p>All data was gathered through the Common Data Set and published by the universities</p>
         </div>
+
+        <div class="intro">
+            <div class="intro-text">
+                <h1 class="hide">
+                    <span class="text">{{ college.name }}</span>
+                </h1>
+                <h1 class="hide">
+                    <span class="text">{{college.year}}</span>
+                </h1>
+                <h1 class="hide">
+                    <span class="text">Information</span>
+                </h1>
+            </div>
+        </div>
+
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script type="text/javascript" src="{% static 'query/JS/scripts.js' %}"></script>
+
+        <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" 
+        integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" 
+        crossorigin="anonymous"
+        ></script>
+        <script type="text/javascript" src="{% static 'query/JS/details.js' %}"></script>
     </body>
 </html>
