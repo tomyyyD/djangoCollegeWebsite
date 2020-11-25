@@ -22,6 +22,13 @@ def home (req):
     return render(req, 'query/home.html', context)
 
 def details(req, ID):
+    if 'term' in req.GET:
+        qs = College.objects.filter(name__icontains=req.GET.get("term"))
+        names = list()
+        for college in qs:
+            names.append(college.name)
+        return JsonResponse(names, safe=False)
+
     college = get_object_or_404(College, pk=ID)
     return render(req, 'query/details.html', {'college': college})
 

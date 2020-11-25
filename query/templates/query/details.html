@@ -9,9 +9,8 @@
     <body>
         <div class='collegeData menu'>
             <a href="/" class="homeButton">Home</a>
-            <form class="searchContainer top" action="{% url 'searchResults' %}" method="get">
-                <input class="searchBar" name='q' type="text" placeholder="Search...">
-                <button class="searchButton">Search</button>
+            <form class="searchContainer top" action="{% url 'searchResults' %}" method="get" autocomplete="off">
+                <input class="searchBar menuSearch" name='q' type="text" placeholder="Search...">
             </form>
         </div>
         <div class="collegeData one">
@@ -124,4 +123,11 @@
             <p>All data was gathered through the Common Data Set and published by the universities</p>
         </div>
     </body>
+    <script>
+        $( function() {
+            $("#search").autocomplete({
+                source: "{% url 'query-home' %}"
+            })
+        })
+    </script>
 </html>
