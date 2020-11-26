@@ -96,7 +96,16 @@ body{
     align-items: center;
     background-color: #def2f1;
     width: 90%;
-    height: 80vh;
+    height: 90vh;
+}
+
+
+.container{
+    background-color: #def2f1;
+    border-radius: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+    color: #17252a;
 }
 
 .collegeData{
@@ -107,8 +116,14 @@ body{
     align-items: center;
 }
 
+.detailTitle{
+    width: 98%;
+    margin-left: 2%;
+}
+
 .menu{
-    width: 100%;
+    width: 98%;
+    margin-left: 2%;
     background-color: #3aafa9;
     padding-top: 10px;
     padding-bottom: 10px;
