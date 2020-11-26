@@ -12,4 +12,4 @@ function sizing(){
 }
 
 window.onload = sizing()
-window.addEventListener('resize', sizing)
+window.addEventListener('resize', sizing) 
