@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class='collegeData menu'>
-            <form class="searchContainer top" action="{% url 'searchResults' %}" method="get" autocomplete="off">
+            <form class="searchContainer top" action="{% url 'details' college.id %}" method="get" autocomplete="off">
                 <input class="searchBar menuSearch" name='q' type="text" placeholder="Search..." list=collegeSet>
                 <datalist id="collegeSet">
                     {% for college in Colleges%}

@@ -16,6 +16,14 @@ def home (req):
     return render(req, 'query/home.html', context)
 
 def details(req, ID):
+    if req.GET.get('q'):
+        print('doing something')
+        query = req.GET.get('q')
+        object_list = College.objects.filter(
+            Q(name__icontains=query or Q(nickname__icontains=query))
+        )
+        college_list = object_list.order_by('name')
+        ID = college_list.first().pk
     college = get_object_or_404(College, pk=ID)
     context = {
         'college': college,
