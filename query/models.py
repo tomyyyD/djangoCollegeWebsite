@@ -63,6 +63,12 @@ class College(models.Model):
     def actTotal75th(self):
         return round((self.actMath75th + self.actEnglish75th)/2)
 
+    #GPA data
+    gpaFour = models.IntegerField(blank=True, default=0)
+    gpaThreeSevenFive = models.IntegerField(blank=True, default=0)
+    gpaThreeFive = models.IntegerField(blank=True, default=0)
+
+
     #athletic Division
     athDiv = models.CharField(max_length=50, default="", blank=True)
     athConference = models.CharField(max_length=50, default='', blank=True)

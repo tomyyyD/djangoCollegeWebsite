@@ -106,28 +106,55 @@ body{
     margin-left: 2%;
     margin-right: 2%;
     color: #17252a;
+    width: 75%;
+    padding: 2% 0;
+}
+
+.dataType{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .collegeData{
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-around;
     width: 100%;
     align-items: center;
 }
 
 .detailTitle{
-    width: 98%;
+    width: 19%;
     margin-left: 2%;
+    align-items: flex-start;
+    position: fixed;
+    left: 0;
+}
+
+.detailTextTitle{
+    font-size: 3em;
+}
+
+.detailContainer{
+    margin-top: 100px;
+    display: flex;
+    position: relative;
+    flex-direction: row-reverse;
+    z-index: -1;
 }
 
 .menu{
+    top:0;
+    left: 0;
+    position: fixed;
     width: 98%;
     margin-left: 2%;
     background-color: #3aafa9;
     padding-top: 10px;
     padding-bottom: 10px;
-    flex-direction: left;
+    justify-content: left;
 }
 
 .homeButton{
@@ -194,7 +221,7 @@ body{
 
 .dataGroup{
     padding: 20px;
-    width: 50%;
+    width: 25%;
 }
 
 .generalInfo{
@@ -237,6 +264,16 @@ body{
     .dataGroup{
         font-size: 1.5em;
     }
+    .detailContainer{
+        flex-direction: column;
+    }
+    .detailTitle{
+        position: relative;
+    }
+    .container{
+        width: 96%;
+    }
+
 }
 
 #title{
