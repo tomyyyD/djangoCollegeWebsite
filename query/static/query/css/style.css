@@ -107,7 +107,6 @@ body{
     margin-right: 2%;
     color: #17252a;
     width: 75%;
-    padding: 2% 0;
 }
 
 .dataType{
@@ -115,6 +114,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 2% 0;
 }
 
 .collegeData{
@@ -269,6 +269,7 @@ body{
     }
     .detailTitle{
         position: relative;
+        width: 98%;
     }
     .container{
         width: 96%;

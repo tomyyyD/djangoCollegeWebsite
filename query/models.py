@@ -84,6 +84,11 @@ class College(models.Model):
 
     studentFacultyRatio = models.CharField(max_length=50, default="", blank=True)
     
+    #ranking boys
+    usnRank = models.IntegerField(default=0, blank=True)
+    nicheRank = models.IntegerField(default=0, blank=True)
+    wsjRank = models.IntegerField(default=0, blank=True)
+
     #totals
     def totalApps(self):
         return self.maleApps + self.femaleApps
