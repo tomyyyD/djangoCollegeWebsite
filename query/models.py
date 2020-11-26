@@ -64,9 +64,9 @@ class College(models.Model):
         return round((self.actMath75th + self.actEnglish75th)/2)
 
     #GPA data
-    gpaFour = models.IntegerField(blank=True, default=0)
-    gpaThreeSevenFive = models.IntegerField(blank=True, default=0)
-    gpaThreeFive = models.IntegerField(blank=True, default=0)
+    gpaFour = models.DecimalField(blank=True, default=0, decimal_places=2, max_digits=5)
+    gpaThreeSevenFive = models.DecimalField(blank=True, default=0, decimal_places=2, max_digits=5)
+    gpaThreeFive = models.DecimalField(blank=True, default=0, decimal_places=2, max_digits=5)
 
 
     #athletic Division
