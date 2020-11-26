@@ -9,6 +9,7 @@
                     <P class="collegeSummary">{{ college.year }}</P>
                     <P class="collegeSummary">${{ college.totalCost }}</P>
                     <p class="collegeSummary">{{college.satTotal25th}} - {{college.satTotal75th}}</p>
+                    <p class="collegeSummary">{{college.state }}</p>
                 </span>
             {% else %}
                 <span class="collegeButtonContainer">
@@ -17,6 +18,7 @@
                     <P class="collegeSummary">{{ college.year }}</P>
                     <P class="collegeSummary">${{ college.totalCost }}</P>
                     <p class="collegeSummary">{{college.satTotal25th}} - {{college.satTotal75th}}</p>
+                    <p class="collegeSummary">{{college.state }}</p>
                 </span>
             {% endif %}
         {% endfor %}
