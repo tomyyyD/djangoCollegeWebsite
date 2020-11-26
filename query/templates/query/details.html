@@ -80,7 +80,7 @@
                             <h3>Wait List Data</h3>
                             <p>Colleges wait list statistics (if published) </p>
                             {% if college.offeredWaitlist == 0 and college.tookWaitlist == 0 and college.admittedWaitlist == 0%}
-                                <p>This Data was not published by this school</p>
+                                <p>This Data was not published by {{college.name}}</p>
                             {% elif college.offeredWaitlist == 0 and college.tookWaitlist == 0 %}
                                 <p>Students accepted from waitlist: {{college.admittedWaitlist}}</p>
                             {% else %}
@@ -116,9 +116,9 @@
                                 <p>This data was not published by {{college.name}}</p>
                             {% else %}
 
-                                <p>percent of students with GPA of 4.0: {{ college.gpaFour }}</p>
-                                <p>percent of students with GPA 3.75-3.99: {{ college.gpaThreeSevenFive }}</p>
-                                <p>percent of students with GPA of 3.50-3.74: {{ college.gpaThreeFive }}</p>
+                                <p>percent of students with GPA of 4.0: {{ college.gpaFour }}%</p>
+                                <p>percent of students with GPA 3.75-3.99: {{ college.gpaThreeSevenFive }}%</p>
+                                <p>percent of students with GPA of 3.50-3.74: {{ college.gpaThreeFive }}%</p>
                             {% endif %}
                         </div>
                     </div>
