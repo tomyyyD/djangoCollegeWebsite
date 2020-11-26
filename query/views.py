@@ -17,7 +17,6 @@ def home (req):
 
 def details(req, ID):
     if req.GET.get('q'):
-        print('doing something')
         query = req.GET.get('q')
         object_list = College.objects.filter(
             Q(name__icontains=query or Q(nickname__icontains=query))
