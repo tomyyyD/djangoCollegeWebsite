@@ -145,13 +145,34 @@
                             <p>Board Cost: ${{college.boardCost}}</p>
                             <p>Required Fees Cost: ${{college.requiredFeeCost}}</p>
                             <h3>Total Cost: ${{college.totalCost}}</h3>
+                            {% if college.inStateTuitionCost != 0 and college.inStateTuitionCost != college.tuitionCost %}
+                            <h3>Total In-State Cost: ${{college.inStateCost}}</h3>
+                            {% endif %}
                         </div>
                         <div class="dataGroup">
                             <h3>Ranking</h3>
                             <p>Rank of college based on multiple sources</p>
-                            <p>US New and World Report Rank: {{college.usnRank}}</p>
-                            <p>Niche Rank: {{college.nicheRank}}</p>
-                            <p>Wall Street Journal Rank: {{college.wsjRank}}</p>
+                            <p>US News and World Report Rank: 
+                                {% if college.usnRank == 0 %}
+                                Not Ranked
+                                {% else %}
+                                {{college.usnRank}}
+                                {% endif %}
+                            </p>
+                            <p>Niche Rank: 
+                                {% if college.nicheRank == 0 %}
+                                Not Ranked
+                                {% else %}
+                                {{college.nicheRank}}
+                                {% endif %}
+                            </p>
+                            <p>Wall Street Journal Rank:
+                                {% if college.wsjRank == 0 %}
+                                Not Ranked
+                                {% else %}
+                                {{college.wsjRank}}
+                                {% endif %}
+                            </p>
                         </div>
                     </div>
                 </div>    

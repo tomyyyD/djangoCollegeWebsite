@@ -81,6 +81,8 @@ class College(models.Model):
     requiredFeeCost = models.IntegerField(default=0)
     def totalCost(self):
         return self.tuitionCost + self.roomCost + self.boardCost + self.requiredFeeCost
+    def inStateCost(self):
+        return self.inStateTuitionCost + self.roomCost + self.boardCost + self.requiredFeeCost
 
     studentFacultyRatio = models.CharField(max_length=50, default="", blank=True)
     
