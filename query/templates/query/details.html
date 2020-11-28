@@ -77,18 +77,26 @@
                             <p>Female Enrolled: {{college.femaleEnrolled }}</p>
                         </div>
                         <div class='dataGroup'>
-                            <h3>Wait List Data</h3>
+                            <h3>Waiting List Data</h3>
                             <p>{{college.name}}'s waiting list breakdown (if published) </p>
-                            {% if college.offeredWaitlist == 0 and college.tookWaitlist == 0 and college.admittedWaitlist == 0%}
-                                <p>This Data was not published by {{college.name}}</p>
-                            {% elif college.offeredWaitlist == 0 and college.tookWaitlist == 0 %}
-                                <p>Students accepted from wait list: {{college.admittedWaitlist}}</p>
-                            {% else %}
-                                <p>Students Offered a waiting list spot: {{college.offeredWaitlist}}</p>
-                                <p>Students that took their spot on the waiting list: {{college.tookWaitlist}}</p>
-                                <p>Students that were admitted from the waiting list: {{college.admittedWaitlist}}</p>
-                                <p>waiting list acceptance rate: {{college.waitlistAcceptRate}}%</p>
-                            {% endif %}
+                            <p>Students offered a spot on the waiting list: {% if college.offeredWaitlist == 0 %}
+                                Not Published
+                                {% else %}
+                                {{college.offeredWaitlist}}
+                                {% endif %}
+                            </p>
+                            <p>Students offered a spot on the waiting list: {% if college.tookWaitlist == 0 %}
+                                Not Published
+                                {% else %}
+                                {{college.tookWaitlist}}
+                                {% endif %}
+                            </p>
+                            <p>Students admitted from the waiting list: {% if college.admittedWaitlist == 0 and college.tookWaitlist == 0 and college.offeredWaitlist == 0 %}
+                                Not Published
+                                {% else %}
+                                {{college.admittedWaitlist}}
+                                {% endif %}
+                            </p>
                         </div>
     
                     </div>
