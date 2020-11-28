@@ -10,13 +10,13 @@
     <body>
         <div class='collegeData menu'>
             <form class="searchContainer top" action="{% url 'details' college.id %}" method="get" autocomplete="off">
+                <a href="/" class="homeButton">Home</a>
                 <input class="searchBar menuSearch" name='q' type="text" placeholder="Search..." list=collegeSet>
                 <datalist id="collegeSet">
                     {% for college in Colleges%}
                         <option value="{{college.name}}">
                     {% endfor %}
                 </datalist>
-                <a href="/" class="homeButton">Home</a>
             </form>
         </div>
         <span class="detailContainer">
@@ -78,16 +78,16 @@
                         </div>
                         <div class='dataGroup'>
                             <h3>Wait List Data</h3>
-                            <p>Colleges wait list statistics (if published) </p>
+                            <p>{{college.name}}'s waiting list breakdown (if published) </p>
                             {% if college.offeredWaitlist == 0 and college.tookWaitlist == 0 and college.admittedWaitlist == 0%}
                                 <p>This Data was not published by {{college.name}}</p>
                             {% elif college.offeredWaitlist == 0 and college.tookWaitlist == 0 %}
-                                <p>Students accepted from waitlist: {{college.admittedWaitlist}}</p>
+                                <p>Students accepted from wait list: {{college.admittedWaitlist}}</p>
                             {% else %}
-                                <p>Students Offered a wait-list spot: {{college.offeredWaitlist}}</p>
-                                <p>Students that took their spot on the wait-list: {{college.tookWaitlist}}</p>
-                                <p>Students that were admitted from the wait-list: {{college.admittedWaitlist}}</p>
-                                <p>wait-list acceptance rate: {{college.waitlistAcceptRate}}%</p>
+                                <p>Students Offered a waiting list spot: {{college.offeredWaitlist}}</p>
+                                <p>Students that took their spot on the waiting list: {{college.tookWaitlist}}</p>
+                                <p>Students that were admitted from the waiting list: {{college.admittedWaitlist}}</p>
+                                <p>waiting list acceptance rate: {{college.waitlistAcceptRate}}%</p>
                             {% endif %}
                         </div>
     
@@ -141,8 +141,12 @@
                         <div class='dataGroup'>
                             <h3>Costs</h3>
                             <p>Tuition Cost: ${{college.tuitionCost}}</p>
-                            <p>Room Cost: ${{college.roomCost}}</p>
-                            <p>Board Cost: ${{college.boardCost}}</p>
+                            {% if college.boardCost != 0 %}
+                                <p>Room Cost: ${{college.roomCost}}</p>
+                                <p>Board Cost: ${{college.boardCost}}</p>
+                            {% else %}
+                                <p>Room and Board: ${{college.roomCost}}</p>
+                            {% endif %}
                             <p>Required Fees Cost: ${{college.requiredFeeCost}}</p>
                             <h3>Total Cost: ${{college.totalCost}}</h3>
                             {% if college.inStateTuitionCost != 0 and college.inStateTuitionCost != college.tuitionCost %}
@@ -180,7 +184,8 @@
         </span>
 
         <div class="footer">
-            <p>All data was gathered through the Common Data Set and published by the universities</p>
+            <p>All data was gathered through the Common Data Set</p>
+            <p>data is published voluntarily by universities</p>
         </div>
 
         <div class="intro">

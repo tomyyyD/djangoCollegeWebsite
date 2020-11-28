@@ -14,10 +14,6 @@ body{
     background-color: #3aafa9;
 }
 
-p{
-    pointer-events: stroke;
-}
-
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #def2f1;
     opacity: 1; /* Firefox */
@@ -87,11 +83,12 @@ p{
     outline: none;
 }
 .menuSearch{
+    padding-left: 10px;
     width: 100%;
 }
 
 .tableContainer{
-    margin: 0 5%;
+    margin-right: 5%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -99,7 +96,7 @@ p{
     flex-direction: column;
     align-items: center;
     background-color: #def2f1;
-    width: 90%;
+    width: 95%;
     height: 90vh;
 }
 
@@ -126,7 +123,7 @@ p{
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-    align-items: center;
+    align-items: baseline;
 }
 
 .detailTitle{
@@ -135,6 +132,8 @@ p{
     align-items: flex-start;
     position: fixed;
     left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .detailTextTitle{
@@ -143,6 +142,7 @@ p{
 
 .detailContainer{
     margin-top: 100px;
+    margin-bottom: 20px;
     display: flex;
     position: relative;
     flex-direction: row-reverse;
@@ -154,8 +154,8 @@ p{
     left: 0;
     position: fixed;
     width: 98%;
-    margin-left: 2%;
-    background-color: #3aafa9;
+    padding-left: 2%;
+    background-color: #2e807b;
     padding-top: 10px;
     padding-bottom: 10px;
     justify-content: left;
@@ -167,10 +167,9 @@ p{
     color: #def2f1;
     text-decoration: none;
     width: auto;
-    padding: 15px 25px 15px;
+    padding: 15px 20px 15px;
     transition-duration: 200ms;
     text-align: center;
-    /* border-bottom: #def2f1 3px solid; */
     font-size: 1.5em;
 }
 
@@ -238,22 +237,19 @@ p{
     padding-bottom: 0;
 }
 
-.one{
-    background-color: lightblue;
-}
-
-.two{
-    background-color: #def2f1;
-}
-
-.three{
-    background-color: white;
+.footer{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e807b;
 }
 
 @media (max-width:1200px){
     .content{
         flex-direction: column;
-        
     }
     .headingContainer{
         top:0;
@@ -261,7 +257,6 @@ p{
     }
     .tableContainer{
         margin: 1% 3% 1%;
-
     }
     .collegeButtonContainer{
         font-size: 1.5em;
@@ -275,11 +270,15 @@ p{
     .detailTitle{
         position: relative;
         width: 98%;
+        top: 0;
+        transform: translateY(0%);
     }
     .container{
         width: 96%;
     }
-
+    .intro-text{
+        text-align: center;
+    }
 }
 
 #title{
