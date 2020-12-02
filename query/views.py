@@ -39,6 +39,7 @@ def SearchResults(req):
         Q(name__icontains=query or Q(nickname__icontains=query))
     )
     college_list = object_list.order_by('name')
+    print(college_list)
     context = {
         'Colleges': College.objects.order_by('name'),
         'college_list': college_list,
