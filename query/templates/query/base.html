@@ -9,21 +9,27 @@
         <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
     </head>
     <body>
-        <span class="content">
+        <div class="content">
             <div class="headingContainer">
-                <h1 class='titleText searchText'>Search for a college below,</h1>
-                <form class="searchContainer" action="{% url 'searchResults' %}" method="get" autocomplete="off">
-                    <input id="search" class="searchBar" name='q' type="text" placeholder="Search..." list="collegeSet">
-                    <datalist id="collegeSet">
-                        {% for college in Colleges%}
-                            <option value="{{college.name}}">
-                        {% endfor %}
-                    </datalist>
-                    <a class="homeButton" href="/">Clear</a>
-                </form>
-                <h1 class="titleText">or</h1>
-                <h1 class="titleText" id="title">To find detailed information for any college on the list, select a college from the list</h1>
-
+                <div class="infoContainer">
+                    <h1 class='titleText searchText'>Search for a college below..</h1>
+                    <form class="searchContainer" action="{% url 'searchResults' %}" method="get" autocomplete="off">
+                        <input id="search" class="searchBar" name='q' type="text" placeholder="Search..." list="collegeSet">
+                        <datalist id="collegeSet">
+                            {% for college in Colleges%}
+                                <option value="{{college.name}}">
+                            {% endfor %}
+                        </datalist>
+                        <a class="homeButton" href="/">Clear</a>
+                    </form>
+                    <h1 class="titleText" id="title">Select a college from the list to find detailed information.</h1>
+                </div>
+                <div class="aboutContainer">
+                    <p class="aboutText">All Information presented is gathered from the Common Data Set and published voluntariy by Colleges and Universities.</p>
+                </div>
+                <div class="imageContainer">
+                    <img class="homeImage" src="{% static 'query/assets/Logo2.png' %}">
+                </div>
             </div>
     
             <div class="tableContainer">
@@ -41,7 +47,7 @@
                     {% block content %}{% endblock %}
                 </div>
             </div>
-        </span>
+        </div>
 
         {% load static %}
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>

@@ -9,8 +9,9 @@
     </head>
     <body>
         <div class='collegeData menu'>
+            <a href="/" class="homeButton">Home</a>
             <form class="searchContainer top" action="{% url 'details' college.id %}" method="get" autocomplete="off">
-                <a href="/" class="homeButton">Home</a>
+                
                 <input class="searchBar menuSearch" name='q' type="text" placeholder="Search..." list=collegeSet>
                 <datalist id="collegeSet">
                     {% for college in Colleges%}
@@ -23,11 +24,13 @@
             <div class="collegeData detailTitle">
                 <div style="padding: 20px;">
                     <h1 class="detailTextTitle">{{ college.name }}</h1>
-                    <h2>School year: {{ college.year }}</h2>
-                    <h2>Student to faculty ratio: {{college.studentFacultyRatio}}</p>    
-                    <h2>Division {{college.athDiv}}</h2>
-                    <h2>Atheltic Conference: {{college.athConference}}</h2>
-                    <h2>State: {{college.state}}</h2>
+                    <div>
+                        <h2 class='summaryText'>School year: {{ college.year }}</h2>
+                        <h2 class='summaryText'>Student to faculty ratio: {{college.studentFacultyRatio}}</p>    
+                        <h2 class='summaryText'>Division {{college.athDiv}}</h2>
+                        <h2 class='summaryText'>Atheltic Conference: {{college.athConference}}</h2>
+                        <h2 class='summaryText'>State: {{college.state}}</h2>    
+                    </div>
                 </div>    
             </div>
 
@@ -162,7 +165,7 @@
                             {% endif %}
                         </div>
                         <div class="dataGroup">
-                            <h3>Ranking</h3>
+                            <h3>National Ranking</h3>
                             <p>Rank of college based on multiple sources</p>
                             <p>US News and World Report Rank: 
                                 {% if college.usnRank == 0 %}
