@@ -20,12 +20,15 @@
                                 <option value="{{college.name}}">
                             {% endfor %}
                         </datalist>
-                        <a class="homeButton" href="/">Clear</a>
+                        <button class="searchbutton">Search</button>
+                        
                     </form>
-                    <h1 class="titleText" id="title">Select a college from the list to find detailed information.</h1>
+                    <a class="homeButton" href="/">Clear</a>
                 </div>
                 <div class="aboutContainer">
-                    <p class="aboutText">All Information presented is gathered from the Common Data Set and published voluntariy by Colleges and Universities.</p>
+                    <h1 class="titleText" id="title">Select a college from the list to find detailed information.</h1>
+                    <div><p class="aboutText">All Information presented is gathered from the Common Data Set and published voluntariy by Colleges and Universities.</p></div>
+                    
                 </div>
                 <div class="imageContainer">
                     <img class="homeImage" src="{% static 'query/assets/Logo2.png' %}">

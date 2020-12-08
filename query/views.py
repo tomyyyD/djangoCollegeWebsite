@@ -19,7 +19,7 @@ def details(req, ID):
     if req.GET.get('q'):
         query = req.GET.get('q')
         object_list = College.objects.filter(
-            Q(name__icontains=query or Q(nickname__icontains=query))
+            Q(name__icontains=query) or Q(nickname__icontains=query)
         )
         college_list = object_list.order_by('name')
         ID = college_list.first().pk
@@ -36,12 +36,15 @@ def About(req):
 def SearchResults(req):
     query = req.GET.get('q')
     object_list = College.objects.filter(
-        Q(name__icontains=query or Q(nickname__icontains=query))
+        Q(name__icontains=query)
     )
-    college_list = object_list.order_by('name')
-    print(college_list)
+    nickname_list = College.objects.filter(
+        Q(nickname__icontains=query)
+    )
+    full_list = object_list | nickname_list
+    full_list = full_list.order_by('name')
     context = {
         'Colleges': College.objects.order_by('name'),
-        'college_list': college_list,
+        'college_list': full_list,
     }
     return render(req, 'query/college_list.html', context)

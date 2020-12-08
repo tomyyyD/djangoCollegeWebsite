@@ -14,16 +14,16 @@ body{
     background-color: #3aafa9;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ input placeholder text */ 
     color: #def2f1;
     opacity: 1; /* Firefox */
 }
   
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder { /* Internet Explorer 10-11 input placeholder text */
     color: #def2f1;
 }
   
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder { /* Microsoft Edge input placeholder text */
     color: #def2f1;
 }
 
@@ -61,6 +61,7 @@ body{
     align-items: center;
     justify-content: center;
     margin-bottom: 50px;
+    width: 100%;
 }
 
 .homeImage{
@@ -69,7 +70,7 @@ body{
 }
 
 .aboutText{
-    font-size: 1.2vw;
+    font-size: 1.4vw;
 }
 
 .searchContainer{
@@ -81,6 +82,19 @@ body{
     height: 58px;
     border-bottom: #def2f1 3px solid;
 }
+
+.searchbutton{
+    border: none;
+    background: none;
+    color: #def2f1;
+    font-size: 1.5em;
+    transition-duration: 200ms;
+}
+.searchbutton:hover{
+    background-color: #def2f1;
+    color: #17252a;
+}
+
 .top{
     margin-left: 20px;
     margin-top: 0;
@@ -288,9 +302,9 @@ body{
         flex: 2;
         
     }
-    .aboutText{
-        font-size: 2vw;
-    }
+    /* .aboutText{
+        font-size: 1.6vw;
+    } */
     .imageContainer{
         margin: 0 20px;
     }
