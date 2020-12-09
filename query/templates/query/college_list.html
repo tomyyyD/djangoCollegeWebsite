@@ -1,24 +1,28 @@
 {% extends "query/base.html" %}
 {% block content %}
-    {% for college in college_list %}
-        {% if forloop.last %}
-            <span class="collegeButtonContainer last">
-                <a class='collegeButton' href='{% url "details" college.id %}'>{{college.name}}</a>
-                <p class="collegeSummary">{{ college.totalAcceptRate }}%</p>
-                <P class="collegeSummary">{{ college.year }}</P>
-                <p class="collegeSummary">${{college.totalCost}}</p>
-                <p class="collegeSummary">{{college.satTotal25th}} - {{college.satTotal75th}}</p>
-                <p class="collegeSummary">{{college.state }}</p>
-            </span>
-        {% else %}
-            <span class="collegeButtonContainer">
-                <a class='collegeButton' href='{% url "details" college.id %}'>{{college.name}}</a>
-                <p class="collegeSummary">{{ college.totalAcceptRate }}%</p>
-                <P class="collegeSummary">{{ college.year }}</P>
-                <p class="collegeSummary">${{college.totalCost}}</p>
-                <p class="collegeSummary">{{college.satTotal25th}} - {{college.satTotal75th}}</p>
-                <p class="collegeSummary">{{ college.state }}</p>
-            </span>
-        {% endif %}
-    {% endfor %}
+    {% if college_list %}
+        {% for college in college_list %}
+            {% if forloop.last %}
+                <span class="collegeButtonContainer last">
+                    <a class='collegeButton' href='{% url "details" college.id %}'>{{college.name}}</a>
+                    <p class="collegeSummary">{{ college.totalAcceptRate }}%</p>
+                    <P class="collegeSummary">{{ college.year }}</P>
+                    <p class="collegeSummary">${{college.totalCost}}</p>
+                    <p class="collegeSummary">{{college.satTotal25th}} - {{college.satTotal75th}}</p>
+                    <p class="collegeSummary">{{college.state }}</p>
+                </span>
+            {% else %}
+                <span class="collegeButtonContainer">
+                    <a class='collegeButton' href='{% url "details" college.id %}'>{{college.name}}</a>
+                    <p class="collegeSummary">{{ college.totalAcceptRate }}%</p>
+                    <P class="collegeSummary">{{ college.year }}</P>
+                    <p class="collegeSummary">${{college.totalCost}}</p>
+                    <p class="collegeSummary">{{college.satTotal25th}} - {{college.satTotal75th}}</p>
+                    <p class="collegeSummary">{{ college.state }}</p>
+                </span>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p>Cannot find any colleges with this search</p>
+    {% endif %}
 {% endblock content %}

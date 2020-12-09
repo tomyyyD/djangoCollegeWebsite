@@ -22,6 +22,8 @@ def details(req, ID):
             Q(name__icontains=query) or Q(nickname__icontains=query)
         )
         college_list = object_list.order_by('name')
+        if not college_list.exists():
+            return render(req, 'query/home.html')
         ID = college_list.first().pk
     college = get_object_or_404(College, pk=ID)
     context = {
