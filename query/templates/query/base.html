@@ -14,14 +14,22 @@
                 <div class="infoContainer">
                     <h1 class='titleText searchText'>Search for a college below..</h1>
                     <form class="searchContainer" action="{% url 'searchResults' %}" method="get" autocomplete="off">
-                        <input id="search" class="searchBar" name='q' type="text" placeholder="Search..." list="collegeSet">
+                        <input id="search" class="searchBar" name='q' type="text" placeholder="By College Name..." list="collegeSet">
                         <datalist id="collegeSet">
-                            {% for college in Colleges%}
+                            {% for college in Colleges %}
                                 <option value="{{college.name}}">
                             {% endfor %}
                         </datalist>
+                        <button class="searchbutton">Search</button>                        
+                    </form>
+                    <form class="searchContainer" action="{% url 'searchResults' %}" method="get" autocomplete="off">
+                        <input id="search" class="searchBar" name='s' type="text" placeholder="By State..." list="stateSet">
+                        <datalist id="stateSet">
+                            {% for college in Colleges %}
+                                <option value="{{ college.state }}">
+                            {% endfor %}
+                        </datalist>
                         <button class="searchbutton">Search</button>
-                        
                     </form>
                     <a class="homeButton" href="/">Clear</a>
                 </div>

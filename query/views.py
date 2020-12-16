@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, ListView
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.http import JsonResponse
 
 from .models import College
@@ -36,15 +36,22 @@ def About(req):
     return render(req, 'query/about.html')
 
 def SearchResults(req):
-    query = req.GET.get('q')
-    object_list = College.objects.filter(
-        Q(name__icontains=query)
-    )
-    nickname_list = College.objects.filter(
-        Q(nickname__icontains=query)
-    )
-    full_list = object_list | nickname_list
-    full_list = full_list.order_by('name')
+    if req.GET.get('q'):
+        query = req.GET.get('q')
+        object_list = College.objects.filter(
+            Q(name__icontains=query)
+        )
+        nickname_list = College.objects.filter(
+            Q(nickname__icontains=query)
+        )
+        full_list = object_list | nickname_list
+        full_list = full_list.order_by('name')
+    elif req.GET.get('s'):
+        query = req.GET.get('s')
+        object_list= College.objects.filter(
+            Q(state__icontains=query)
+        )
+        full_list = object_list.order_by('state')
     context = {
         'Colleges': College.objects.order_by('name'),
         'college_list': full_list,
