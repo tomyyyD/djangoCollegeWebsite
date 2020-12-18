@@ -11,6 +11,7 @@ from .models import College
 def home (req):
     context = {
         'Colleges': College.objects.order_by('name'),
+        'States': College.objects.values('state').distinct(),
         'title': 'College Site Home',
     }
     return render(req, 'query/home.html', context)
