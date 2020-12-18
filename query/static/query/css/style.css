@@ -18,6 +18,13 @@ body{
     background-color: #3aafa9;
 }
 
+hr{
+    background-color: #17252a;
+    border: 0;
+    height: 8px;
+    width: 60%;
+}
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ input placeholder text */ 
     color: #def2f1;
     opacity: 1; /* Firefox */
@@ -79,6 +86,7 @@ option{
 
 .aboutText{
     font-size: 1.4vw;
+    margin: 20px 0;
 }
 
 .searchContainer{
@@ -93,6 +101,7 @@ option{
 
 .searchbutton{
     border: none;
+    border-radius: 10px;
     background: none;
     color: #def2f1;
     font-size: 1.5em;
@@ -112,6 +121,7 @@ option{
 
 .searchBar{
     border: 1px solid #def2f1;
+    border-radius: 10px;
     font-size: 1.5em;
     padding: 20px 3%;
     margin: 10px 0;
@@ -123,6 +133,7 @@ option{
     outline: none;
 }
 .menuSearch{
+    margin: 0;
     padding-left: 10px;
     width: 100%;
 }
@@ -215,6 +226,7 @@ option{
     transition-duration: 200ms;
     text-align: center;
     font-size: 1.5em;
+    border-radius: 10px;
 }
 
 .homeButton:hover{
@@ -231,7 +243,7 @@ option{
     display: flex;
     flex-direction: row;
     justify-content: left;
-    width: 95%;
+    width: 100%;
     align-items: center;
     padding-left: 5%;
     border-bottom: 1px #3aafa9 solid;
@@ -250,7 +262,7 @@ option{
 }
 
 .header{
-    width: calc(95% - 17px);
+    width: calc(100% - 17px);
     border: 0;
 }
 
