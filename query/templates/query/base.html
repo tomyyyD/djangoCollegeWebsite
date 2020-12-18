@@ -14,32 +14,32 @@
                 <div class="infoContainer">
                     <h1 class='titleText searchText'>Search for a college below..</h1>
                     <form class="searchContainer" action="{% url 'searchResults' %}" method="get" autocomplete="off">
-                        <input id="search" class="searchBar" name='q' type="text" placeholder="By College Name..." list="collegeSet">
+                        <input class="searchBar" name='q' type="text" placeholder="Name" list="collegeSet" value='{{currName}}''>
                         <datalist id="collegeSet">
                             {% for college in Colleges %}
                                 <option value="{{college.name}}">
                             {% endfor %}
                         </datalist>
-                        <button class="searchbutton">Search</button>                        
-                    </form>
-                    <form class="searchContainer" action="{% url 'searchResults' %}" method="get" autocomplete="off">
-                        <input id="search" class="searchBar" name='s' type="text" placeholder="By State..." list="stateSet">
+                        <select class="searchBar" name='s' list="stateSet">
                         <datalist id="stateSet">
-                            {% for college in Colleges %}
-                                <option value="{{ college.state }}">
+                            <option selected>State</option>
+                            {% for college in States %}
+                                {% if college.state == currState %}
+                                    <option value="{{ college.state }}" selected>{{college.state}}</option>
+                                {% else %}
+                                    <option value="{{ college.state }}">{{college.state}}</option>
+                                {% endif %}
                             {% endfor %}
                         </datalist>
-                        <button class="searchbutton">Search</button>
+                        <input type='submit' class="searchbutton" value='Search'></button>
+                        <a class="homeButton" href="/">Clear</a>
                     </form>
-                    <a class="homeButton" href="/">Clear</a>
+
                 </div>
                 <div class="aboutContainer">
                     <h1 class="titleText" id="title">Select a college from the list to find detailed information.</h1>
                     <div><p class="aboutText">All Information presented is gathered from the Common Data Set and published voluntariy by Colleges and Universities.</p></div>
                     
-                </div>
-                <div class="imageContainer">
-                    <img class="homeImage" src="{% static 'query/assets/Logo2.png' %}">
                 </div>
             </div>
     

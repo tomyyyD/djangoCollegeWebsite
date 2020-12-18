@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, ListView
@@ -36,24 +36,39 @@ def About(req):
     return render(req, 'query/about.html')
 
 def SearchResults(req):
+    full_list = College.objects.order_by('name')
+    nameQuery = ''
+    stateQuery = ''
     if req.GET.get('q'):
-        query = req.GET.get('q')
-        object_list = College.objects.filter(
-            Q(name__icontains=query)
-        )
-        nickname_list = College.objects.filter(
-            Q(nickname__icontains=query)
-        )
-        full_list = object_list | nickname_list
-        full_list = full_list.order_by('name')
-    elif req.GET.get('s'):
-        query = req.GET.get('s')
-        object_list= College.objects.filter(
-            Q(state__icontains=query)
-        )
-        full_list = object_list.order_by('state')
+        nameQuery = req.GET.get('q')
+        print(nameQuery)
+        if nameQuery == 'Name':
+            pass
+        else:
+            object_list = full_list.filter(
+                Q(name__icontains=nameQuery)
+            )
+            nickname_list = full_list.filter(
+                Q(nickname__icontains=nameQuery)
+            )
+            full_list = object_list | nickname_list
+            full_list = full_list.order_by('name')
+            #print(full_list)
+    if req.GET.get('s'):
+        stateQuery = req.GET.get('s')
+        if stateQuery == 'State':
+            pass
+        else:
+            state_list = full_list.filter(
+                Q(state__icontains=stateQuery)
+            )
+            #print(state_list)
+            full_list = state_list.order_by('state')
     context = {
         'Colleges': College.objects.order_by('name'),
+        'States': College.objects.values('state').distinct(),
         'college_list': full_list,
+        'currState': stateQuery,
+        'currName': nameQuery,
     }
     return render(req, 'query/college_list.html', context)
