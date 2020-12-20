@@ -67,7 +67,7 @@ def SearchResults(req):
             full_list = state_list.order_by('state')
     context = {
         'Colleges': College.objects.order_by('name'),
-        'States': College.objects.values('state').distinct(),
+        'States': College.objects.values('state').distinct().order_by('state'),
         'college_list': full_list,
         'currState': stateQuery,
         'currName': nameQuery,
