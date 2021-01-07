@@ -2,9 +2,16 @@
     box-sizing: border-box;
 }
 
+:root{
+    --primary-color: #3aafa9;
+    --secondary-color: #2e807b;
+    --primary-text-color: #def2f1;
+    --secondary-text-color:#17252a;
+}
+
 html{
     font-family: sans-serif;
-    color:#def2f1;
+    color:var(--primary-text-color);
 }
 
 h1{
@@ -15,41 +22,41 @@ h1{
 body{
     margin: 0px;
     padding: 0px;
-    background-color: #3aafa9;
+    background-color: var(--primary-color);
 }
 
 hr{
-    background-color: #17252a;
+    background-color: var(--secondary-text-color);
     border: 0;
     height: 8px;
     width: 60%;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ input placeholder text */ 
-    color: #def2f1;
+    color: var(--primary-text-color);
     opacity: 1; /* Firefox */
 }
   
 :-ms-input-placeholder { /* Internet Explorer 10-11 input placeholder text */
-    color: #def2f1;
+    color: var(--primary-text-color);
 }
   
 ::-ms-input-placeholder { /* Microsoft Edge input placeholder text */
-    color: #def2f1;
+    color: var(--primary-text-color);
 }
 
 option{
-    color: #17252a;
+    color: var(--secondary-text-color);
 }
 
 .titleText{
     width: 100%;
     text-align: left;
-    color: #17252a;
+    color: var(--secondary-text-color);
 }
 
 .searchText{
-    color: #def2f1;
+    color: var(--primary-text-color);
 }
 
 .content{
@@ -103,14 +110,14 @@ option{
     border: none;
     border-radius: 10px;
     background: none;
-    color: #def2f1;
+    color: var(--primary-text-color);
     font-size: 1.5em;
     transition-duration: 200ms;
     height: 50px;
 }
 .searchbutton:hover{
-    background-color: #def2f1;
-    color: #17252a;
+    background-color: var(--primary-text-color);
+    color: var(--secondary-text-color);
 }
 
 .top{
@@ -120,7 +127,7 @@ option{
 }
 
 .searchBar{
-    border: 1px solid #def2f1;
+    border: 1px solid var(--primary-text-color);
     border-radius: 10px;
     font-size: 1.5em;
     padding: 20px 3%;
@@ -129,7 +136,7 @@ option{
     font-family: sans-serif;
     width: 100%;
     height: 100%;
-    color: #def2f1;
+    color: var(--primary-text-color);
     outline: none;
 }
 .menuSearch{
@@ -146,18 +153,18 @@ option{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #def2f1;
+    background-color: var(--primary-text-color);
     width: 100%;
     height: 90vh;
 }
 
 
 .container{
-    background-color: #def2f1;
+    background-color: var(--primary-text-color);
     border-radius: 10px;
     margin-left: 2%;
     margin-right: 2%;
-    color: #17252a;
+    color: var(--secondary-text-color);
     width: 75%;
 }
 
@@ -210,7 +217,7 @@ option{
     position: fixed;
     width: 100%;
     padding-left: 2%;
-    background-color: #2e807b;
+    background-color: var(--secondary-color);
     padding-top: 10px;
     padding-bottom: 10px;
     justify-content: left;
@@ -219,7 +226,7 @@ option{
 
 .homeButton{
     display: block;
-    color: #def2f1;
+    color: var(--primary-text-color);
     text-decoration: none;
     width: auto;
     padding: 15px 20px 15px;
@@ -230,8 +237,8 @@ option{
 }
 
 .homeButton:hover{
-    background-color: #def2f1;
-    color: #17252a;
+    background-color: var(--primary-text-color);
+    color: var(--secondary-text-color);
 }
 
 .collegeList{
@@ -246,9 +253,9 @@ option{
     width: 100%;
     align-items: center;
     padding-left: 5%;
-    border-bottom: 1px #3aafa9 solid;
+    border-bottom: 1px var(--primary-color) solid;
     min-height: 60px;
-    color: #17252a;
+    color: var(--secondary-text-color);
 }
 
 .summary{
@@ -266,7 +273,7 @@ option{
 .topContainer{
     display: flex;
     width: 100%;
-    border-bottom: 1px #3aafa9 solid;
+    border-bottom: 1px var(--primary-color) solid;
 }
 
 .header{
@@ -277,7 +284,7 @@ option{
 .collegeButton{
     width: 20%;
     text-decoration: underline;
-    color: #17252a;
+    color: var(--secondary-text-color);
 }
 
 .quickInfo{
@@ -312,7 +319,7 @@ option{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #2e807b;
+    background-color: var(--secondary-color);
 }
 
 @media (max-width:1200px){
@@ -377,7 +384,7 @@ option{
 
 /* start animation */
 .intro{
-    background-color: #3aafa9;
+    background-color: var(--primary-color);
     position: fixed;
     top:0;
     left:0;

@@ -73,12 +73,6 @@ class College(models.Model):
     athDiv = models.CharField(max_length=50, default="", blank=True)
     athConference = models.CharField(max_length=50, default='', blank=True)
 
-    #Financial Aid stuff
-    totalStudents = models.IntegerField(blank=True, default=0)
-    totalAppForAid = models.IntegerField(blank=True, default=0)
-    froshAppForAid = models.IntegerField(blank=True, default=0)
-    totalGotFinAid = models.IntegerField(blank=True, default=0)
-    froshGotFinAid = models.IntegerField(blank=True, default=0)
 
     #finance stuff
     inStateTuitionCost = models.IntegerField(default=0, blank=True)
@@ -86,6 +80,13 @@ class College(models.Model):
     roomCost = models.IntegerField(default=0)
     boardCost = models.IntegerField(default=0)
     requiredFeeCost = models.IntegerField(default=0)
+
+    #Financial Aid stuff
+    totalStudents = models.IntegerField(blank=True, default=0)
+    totalAppForAid = models.IntegerField(blank=True, default=0)
+    froshAppForAid = models.IntegerField(blank=True, default=0)
+    totalGotFinAid = models.IntegerField(blank=True, default=0)
+    froshGotFinAid = models.IntegerField(blank=True, default=0)
     totalAvgFinAid = models.IntegerField(default=0, blank=True)
     froshAvgFinAid = models.IntegerField(default=0, blank=True)
 
