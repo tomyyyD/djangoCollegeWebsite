@@ -73,19 +73,36 @@ class College(models.Model):
     athDiv = models.CharField(max_length=50, default="", blank=True)
     athConference = models.CharField(max_length=50, default='', blank=True)
 
+    #Financial Aid stuff
+    totalStudents = models.IntegerField(blank=True, default=0)
+    totalAppForAid = models.IntegerField(blank=True, default=0)
+    froshAppForAid = models.IntegerField(blank=True, default=0)
+    totalGotFinAid = models.IntegerField(blank=True, default=0)
+    froshGotFinAid = models.IntegerField(blank=True, default=0)
+
     #finance stuff
     inStateTuitionCost = models.IntegerField(default=0, blank=True)
     tuitionCost = models.IntegerField(default=0)
     roomCost = models.IntegerField(default=0)
     boardCost = models.IntegerField(default=0)
     requiredFeeCost = models.IntegerField(default=0)
-    avgFinAid = models.IntegerField(default=0)
+    totalAvgFinAid = models.IntegerField(default=0, blank=True)
+    froshAvgFinAid = models.IntegerField(default=0, blank=True)
+
     def totalCost(self):
         return self.tuitionCost + self.roomCost + self.boardCost + self.requiredFeeCost
     def inStateCost(self):
         return self.inStateTuitionCost + self.roomCost + self.boardCost + self.requiredFeeCost
     def avgCostAfterAid(self):
-        return self.totalCost() - self.avgFinAid
+        return self.totalCost() - self.totalAvgFinAid
+    def totalPercentAppForAid(self):
+        return round((self.totalAppForAid/self.totalStudents)*100, 2)
+    def froshPercentAppForAid(self):
+        return round((self.froshAppForAid/(self.femaleEnrolled + self.maleEnrolled))*100,2)
+    def perTotalGotAid(self):
+        return round((self.totalGotFinAid/self.totalStudents)*100, 2)
+    def perFroshGotAid(self):
+        return round((self.froshGotFinAid/(self.femaleEnrolled + self.maleEnrolled))*100, 2)
 
     studentFacultyRatio = models.CharField(max_length=50, default="", blank=True)
     
