@@ -40,24 +40,24 @@
                     <div class="collegeData">
                         <div class="dataGroup">
                             <h3 class="info">Acceptance Rates</h3>
-                            <p class='summary'>The percentage of applied students that were accepted.</p>
                             <p>Total Acceptance Rate: <br>{{ college.totalAcceptRate }}%</p>
                             <p>Male Acceptance Rate: <br>{{ college.maleAcceptRate }}%</p>
                             <p>Female Acceptance Rate: <br>{{ college.femaleAcceptRate }}%</p>
+                            <p class='summary'>The percentage of applied students that were accepted.</p>
                         </div>
                         <div class="dataGroup">
                             <h3 class="info">Applications</h3>
-                            <p class='summary'>Applications are the number of students that applied to the university.</p>
                             <p>Total Applications: <br>{{college.totalApps }}</p>
                             <p>Male Applications: <br>{{college.maleApps }}</p>
                             <p>Female Applications: <br>{{college.femaleApps }}</p>
+                            <p class='summary'>Applications are the number of students that applied to the university.</p>
                         </div>
                         <div class="dataGroup">
                             <h3 class="info">Admissions</h3>
-                            <p class='summary'>Admissions are the number of students that are accepted into the university.</p>
                             <p>Total Admissions: <br>{{college.totalAdmits }}</p>
                             <p>Male Admissions: <br>{{college.maleAdmits }}</p>
                             <p>Female Admissions: <br>{{college.femaleAdmits }}</p>
+                            <p class='summary'>Admissions are the number of students that are accepted into the university.</p>
                         </div>                                
                     </div>
                 </div>
@@ -67,21 +67,20 @@
                     <div class="collegeData">
                         <div class='dataGroup'>
                             <h3 class="info">Yield Rates</h3>
-                            <p class='summary'>Yield is the percent of accepted students that attend the university.</p>
                             <p>Total Yield: <br>{{college.totalYield}}%</p>
                             <p>Male Yield: <br>{{college.maleYield}}%</p>
                             <p>Female Yield: <br>{{college.femaleYield}}%</p>
+                            <p class='summary'>Yield is the percent of accepted students that attend the university.</p>
                         </div>
                         <div class="dataGroup">
                             <h3 class="info">Enrollments</h3>
-                            <p class='summary'>Enrollment is the number of accepted students that attend the university.</p>
                             <p>Total Enrolled: <br>{{college.totalEnrolled }}</p>
                             <p>Male Enrolled: <br>{{college.maleEnrolled }}</p>
                             <p>Female Enrolled: <br>{{college.femaleEnrolled }}</p>
+                            <p class='summary'>Enrollment is the number of accepted students that attend the university.</p>
                         </div>
                         <div class='dataGroup'>
                             <h3 class="info">Waiting List Data</h3>
-                            <p class='summary'>{{college.name}}'s waiting list breakdown (if published). </p>
                             <p>Students offered a spot on the waiting list: <br>{% if college.offeredWaitlist == 0 %}
                                 Not Published
                                 {% else %}
@@ -100,8 +99,8 @@
                                 {{college.admittedWaitlist}}
                                 {% endif %}
                             </p>
+                            <p class='summary'>{{college.name}}'s waiting list breakdown (if published). </p>
                         </div>
-    
                     </div>
                 </div>
 
@@ -110,21 +109,20 @@
                     <div class='collegeData'>
                         <div class='dataGroup'>
                             <h3 class="info">SAT Scores</h3>
-                            <p class='summary'>The SAT score breakdown for {{ college.name }}.</p>
                             <p>SAT writing middle 50%: <br>{{ college.satWriting25th }} - {{college.satWriting75th}}</p>
                             <p>SAT math middle 50%: <br>{{ college.satMath25th }} - {{college.satMath75th}}</p>
                             <p>SAT composite middle 50%: <br>{{college.satTotal25th}} - {{college.satTotal75th}} </p>
+                            <p class='summary'>The SAT score breakdown for {{ college.name }}.</p>
                         </div>
                         <div class='dataGroup'>
                             <h3 class="info">ACT Scores</h3>
-                            <p class='summary'>The ACT score breakdown for {{ college.name }}.</p>
                             <p>ACT writing middle 50%: <br>{{ college.actEnglish25th }} - {{college.actEnglish75th}}</p>
                             <p>ACT math middle 50%: <br>{{ college.actMath25th }} - {{college.actMath75th}}</p>
                             <p>ACT composite middle 50%: <br>{{college.actTotal25th}} - {{college.actTotal75th}} </p>
+                            <p class='summary'>The ACT score breakdown for {{ college.name }}.</p>
                         </div>
                         <div class="dataGroup">
                             <h3 class="info">GPA</h3>
-                            <p class='summary'>The GPA breakdown for {{ college.name }} in the 4.0-3.5 range.</p>
                             <p>GPA on 4.0 scale</p>
                             {% if college.gpaFour == 0 and college.gpaThreeSevenFive == 0 %}
                                 <p>This data was not published by {{college.name}}</p>
@@ -134,6 +132,7 @@
                                 <p>percent of students with GPA 3.75-3.99: <br>{{ college.gpaThreeSevenFive }}%</p>
                                 <p>percent of students with GPA of 3.50-3.74: <br>{{ college.gpaThreeFive }}%</p>
                             {% endif %}
+                            <p class='summary'>The GPA breakdown for {{ college.name }} in the 4.0-3.5 range.</p>
                         </div>
                     </div>
                 </div>
@@ -142,7 +141,6 @@
                     <div class='collegeData'>
                         <div class='dataGroup'>
                             <h3 class="info">Ethinic Breakdown of Total Undergraduates</h3>
-                            <p class='summary'>How ethnic groups are represented at {{college.name}}</p>
                             <p>International Students: <br>{{college.internationalStudents}}</p>
                             <p>Hispanic Students: <br>{{college.hispanicStudents}}</p>
                             <p>African-American, non-Hispanic students: <br>{{college.blackStudents}}</p>
@@ -152,10 +150,10 @@
                             <p>Native Hawaiian or Pacific Islander, non-hispanic: <br>{{college.pacificStudents}}</p>
                             <p>Two or more races, non-Hispanic <br>{{college.mixedStudents}}</p>
                             <p>Unknown Ethnicity students: <br>{{college.unknownStudents}}</p>
+                            <p class='summary'>How ethnic groups are represented at {{college.name}}</p>
                         </div>
                         <div class='dataGroup'>
                             <h3 class="info">Finances</h3>
-                            <p class='summary'>The RAW cost to go to {{college.name}} BEFORE any financial aid is added</p>
                             <p>Tuition Cost: <br>${{college.tuitionCost}}</p>
                             {% if college.boardCost != 0 %}
                                 <p>Room Cost: <br>${{college.roomCost}}</p>
@@ -169,10 +167,10 @@
                             <h3>Total In-State Cost: <br>${{college.inStateCost}}</h3>
                             {% endif %}
                             <p>*all of this data is before any financial aid or scholarships. This is not representative of the average cost to go to {{college.name}}</p>
+                            <p class='summary'>The RAW cost to go to {{college.name}} BEFORE any financial aid is added</p>
                         </div>
                         <div class="dataGroup">
                             <h3 class="info">National Ranking</h3>
-                            <p class="summary">Rank of college based on multiple sources</p>
                             <p>US News and World Report Rank: 
                                 <br>{% if college.usnRank == 0 %}
                                 Not Ranked
@@ -194,6 +192,7 @@
                                 {{college.wsjRank}}
                                 {% endif %}
                             </p>
+                            <p class="summary">Rank of college based on multiple sources</p>
                         </div>
                     </div>
                 </div>    

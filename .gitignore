@@ -5,4 +5,4 @@ staticfiles
 db.sqlite3
 collegesite/
 
-*.bak
+*.bak"*.pyc" 

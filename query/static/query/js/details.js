@@ -11,11 +11,11 @@ $(window).on('load', function(){
             function() {
                 //console.log($(this).next())
                 //$(this).next().css('display', "flex")
-                $(this).children('.summary').css('display', "flex")
+                $(this).children('.summary').css({'opacity': "1", 'background-color':'#b7c9c9'})
             },
             function(){
                 //$(this).next().css('display', "none")
-                $(this).children('.summary').css('display', "none")
+                $(this).children('.summary').css({'opacity': "0", 'background-color':'transparent'})
             }
         )
     })
