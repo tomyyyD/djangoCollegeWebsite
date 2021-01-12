@@ -16,7 +16,7 @@ def home (req):
     }
     return render(req, 'query/home.html', context)
 
-def details(req, ID):
+def details(req, nickname):
     if req.GET.get('q'):
         query = req.GET.get('q')
         object_list = College.objects.filter(
@@ -25,8 +25,9 @@ def details(req, ID):
         college_list = object_list.order_by('name')
         if not college_list.exists():
             return render(req, 'query/home.html')
-        ID = college_list.first().pk
-    college = get_object_or_404(College, pk=ID)
+        nickname = college_list.first().nickname
+        return redirect('details', nickname)
+    college = get_object_or_404(College, nickname=nickname)
     context = {
         'college': college,
         'Colleges': College.objects.order_by('name'),

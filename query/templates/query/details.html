@@ -99,7 +99,7 @@
                                 {{college.admittedWaitlist}}
                                 {% endif %}</b>
                             </p>
-                            <p class='summary'>The waiting list is where colleges will put students that they think are qualified but did not get accepted. If an accepted student decides not to go to the college, the college can pull from the waiting list to maintain their class size.</p>
+                            <p class='summary'>Students who are qualified and can get in, but have to wait until enough accepted students decide not to attend.</p>
                         </div>
                     </div>
                 </div>
@@ -136,6 +136,36 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="dataType">
+                    <h1>Financial Aid</h1>
+                    <div class='collegeData'>
+                        <div class='dataGroup'>
+                            <h3>Application</h3>
+                            <p>Total Students applied for financial aid: <br><b>{{college.totalAppForAid}}</b></p>
+                            <p>Freshmen who applied for financial aid: <br><b>{{college.froshAppForAid}}</b></p>
+                            <p>Percent of total Students who applied for financial aid: <br><b>{{college.totalPercentAppForAid}}%</b></p>
+                            <p>Percent of Freshmen who applied for financial aid: <br><b>{{college.froshPercentAppForAid}}%</b></p>
+                            <p class='summary'>Enrolled students that apply for financial aid</p>
+                        </div>
+                        <div class='dataGroup'>
+                            <h3 class="info">Reception</h3>
+                            <p>Total students that recieved financial aid: <br><b>{{college.totalGotFinAid}}</b></p>
+                            <p>Freshmen that recieved financial aid: <br><b>{{college.froshGotFinAid}}</b></p>
+                            <p>Percent of total students who recieved financial aid: <br><b>{{college.perTotalGotAid}}%</b></p>
+                            <p>Percent of freshmen who recieved financial aid: <br><b>{{college.perFroshGotAid}}%</b></p>
+                            <p class='summary'>Enrolled Students that actually recieve financial aid</p>
+                        </div>
+                        <div class="dataGroup">
+                            <h3 class="info">Costs</h3>
+                            <p>Average financial aid recieved for all students: <br><b>${{college.totalAvgFinAid}}</b> </p>
+                            <p>Average financial aid recieved for freshmen: <br><b>${{college.froshAvgFinAid}}</b></p>
+                            <h3>Average Cost For those who recieved aid: <br><b>${{college.avgCostAfterAid}}</b></h3>
+                            <p class="summary">Cost of Univeristy After Aid is accounted for</p>
+                        </div>
+                    </div>
+                </div>    
+
                 <div class="dataType">
                     <h1>Other Important Information</h1>
                     <div class='collegeData'>
@@ -153,7 +183,7 @@
                             <p class='summary'>How ethnic groups are represented at {{college.name}}</p>
                         </div>
                         <div class='dataGroup'>
-                            <h3 class="info">Finances</h3>
+                            <h3 class="info">Finances (Without Financial Aid)</h3>
                             <p>Tuition Cost: <br><b>${{college.tuitionCost}}</b></p>
                             {% if college.boardCost != 0 %}
                                 <p>Room Cost: <br><b>${{college.roomCost}}</b></p>
@@ -193,34 +223,6 @@
                                     {% endif %}</b>
                             </p>
                             <p class="summary">Rank of college based on multiple sources</p>
-                        </div>
-                    </div>
-                </div>    
-                <div class="dataType">
-                    <h1>Financial Aid</h1>
-                    <div class='collegeData'>
-                        <div class='dataGroup'>
-                            <h3>Application</h3>
-                            <p>Total Students applied for financial aid: <br><b>{{college.totalAppForAid}}</b></p>
-                            <p>Freshmen who applied for financial aid: <br><b>{{college.froshAppForAid}}</b></p>
-                            <p>Percent of total Students who applied for financial aid: <br><b>{{college.totalPercentAppForAid}}%</b></p>
-                            <p>Percent of Freshmen who applied for financial aid: <br><b>{{college.froshPercentAppForAid}}%</b></p>
-                            <p class='summary'>Enrolled students that apply for financial aid</p>
-                        </div>
-                        <div class='dataGroup'>
-                            <h3 class="info">Reception</h3>
-                            <p>Total students that recieved financial aid: <br><b>{{college.totalGotFinAid}}</b></p>
-                            <p>Freshmen that recieved financial aid: <br><b>{{college.froshGotFinAid}}</b></p>
-                            <p>Percent of total students who recieved financial aid: <br><b>{{college.perTotalGotAid}}%</b></p>
-                            <p>Percent of freshmen who recieved financial aid: <br><b>{{college.perFroshGotAid}}%</b></p>
-                            <p class='summary'>Enrolled Students that actually recieve financial aid</p>
-                        </div>
-                        <div class="dataGroup">
-                            <h3 class="info">Costs</h3>
-                            <p>Average financial aid recieved for all students: <br><b>${{college.totalAvgFinAid}}</b> </p>
-                            <p>Average financial aid recieved for freshmen: <br><b>${{college.froshAvgFinAid}}</b></p>
-                            <p>Average Cost For those who recieved aid: <br><b>${{college.avgCostAfterAid}}</b></p>
-                            <p class="summary">Cost of Univeristy After Aid is accounted for</p>
                         </div>
                     </div>
                 </div>    

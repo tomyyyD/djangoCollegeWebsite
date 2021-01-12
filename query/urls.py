@@ -5,7 +5,7 @@ from .views import SearchResults
 
 urlpatterns = [
     path('', views.home, name='query-home'),
-    path('<int:ID>/', views.details, name='details'),
+    path('<str:nickname>/', views.details, name='details'),
     path('search/', views.SearchResults, name='searchResults'),
     path('about/', views.About, name='about')
 ]
