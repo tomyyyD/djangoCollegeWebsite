@@ -125,6 +125,8 @@ option{
     margin-left: 20px;
     margin-top: 0;
     width: fit-content;
+    flex-direction: row;
+    align-items: center;
 }
 
 .searchBar{

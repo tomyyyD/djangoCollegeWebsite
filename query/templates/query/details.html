@@ -9,15 +9,15 @@
     </head>
     <body>
         <div class='collegeData menu'>
-            <a href="/" class="homeButton">Home</a>
+            <a href="{%url 'query-home'%}" class="homeButton">Home</a>
             <form class="searchContainer top" action="{% url 'details' college.id %}" method="get" autocomplete="off">
-                
                 <input class="searchBar menuSearch" name='q' type="text" placeholder="Search..." list=collegeSet>
                 <datalist id="collegeSet">
                     {% for college in Colleges%}
                         <option value="{{college.name}}">
                     {% endfor %}
                 </datalist>
+                <input class="searchbutton" style='padding: 15px 20px 15px; height: 100%' type='submit' value='Search'>
             </form>
         </div>
         <span class="detailContainer">
