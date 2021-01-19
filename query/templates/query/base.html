@@ -14,7 +14,7 @@
                 <div class="infoContainer">
                     <h1 class='titleText searchText'>Search for a college below..</h1>
                     <form class="searchContainer" action="{% url 'searchResults' %}" method="get" autocomplete="off">
-                        <input class="searchBar" name='q' type="text" placeholder="Name" list="collegeSet" value='{{currName}}''>
+                        <input class="searchBar" name='n' type="text" placeholder="Name" list="collegeSet" value='{{currName}}''>
                         <datalist id="collegeSet">
                             {% for college in Colleges %}
                                 <option value="{{college.name}}">

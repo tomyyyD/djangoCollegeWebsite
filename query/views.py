@@ -16,33 +16,12 @@ def home (req):
     }
     return render(req, 'query/home.html', context)
 
-def details(req, nickname):
-    if req.GET.get('q'):
-        query = req.GET.get('q')
-        object_list = College.objects.filter(
-            Q(name__icontains=query) or Q(nickname__icontains=query)
-        )
-        college_list = object_list.order_by('name')
-        if not college_list.exists():
-            return render(req, 'query/home.html')
-        nickname = college_list.first().nickname
-        return redirect('details', nickname)
-    college = get_object_or_404(College, nickname=nickname)
-    context = {
-        'college': college,
-        'Colleges': College.objects.order_by('name'),
-    }
-    return render(req, 'query/details.html', context)
-
-def About(req):
-    return render(req, 'query/about.html')
-
 def SearchResults(req):
     full_list = College.objects.order_by('name')
     nameQuery = ''
     stateQuery = ''
-    if req.GET.get('q'):
-        nameQuery = req.GET.get('q')
+    if req.GET.get('n'):
+        nameQuery = req.GET.get('n')
         print(nameQuery)
         if nameQuery == 'Name':
             pass
@@ -57,6 +36,7 @@ def SearchResults(req):
             full_list = full_list.order_by('name')
             #print(full_list)
     if req.GET.get('s'):
+        #print(req.GET.get('s'))
         stateQuery = req.GET.get('s')
         if stateQuery == 'State':
             pass
@@ -74,3 +54,24 @@ def SearchResults(req):
         'currName': nameQuery,
     }
     return render(req, 'query/college_list.html', context)
+
+def details(req, nickname):
+    if req.GET.get('q'):
+        query = req.GET.get('q')
+        object_list = College.objects.filter(
+            Q(name__icontains=query) or Q(nickname__icontains=query)
+        )
+        college_list = object_list.order_by('name')
+        if not college_list.exists():
+            return redirect('query-home')
+        nickname = college_list.first().nickname
+        return redirect('details', nickname)
+    college = get_object_or_404(College, nickname=nickname)
+    context = {
+        'college': college,
+        'Colleges': College.objects.order_by('name'),
+    }
+    return render(req, 'query/details.html', context)
+
+def About(req):
+    return render(req, 'query/about.html')
