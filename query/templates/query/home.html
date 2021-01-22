@@ -5,7 +5,7 @@
             {% if forloop.last %}
                 <span class="collegeButtonContainer last">
                     <a class='collegeButton' href='{% url "details" college.nickname %}'>{{college.name}}</a>
-                    <p class="collegeSummary">{{ college.totalAcceptRate }}</p>
+                    <p class="collegeSummary">{{ college.totalAcceptRate }}%</p>
                     <P class="collegeSummary">{{ college.year }}</P>
                     <P class="collegeSummary">${{ college.totalCost }}</P>
                     <p class="collegeSummary">{{college.satTotal25th}} - {{college.satTotal75th}}</p>

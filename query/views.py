@@ -45,11 +45,12 @@ def SearchResults(req):
                 Q(state__icontains=stateQuery)
             )
             #print(state_list)
-            full_list = state_list.order_by('state')
+            full_list = state_list
+    
     context = {
         'Colleges': College.objects.order_by('name'),
         'States': College.objects.values('state').distinct().order_by('state'),
-        'college_list': full_list,
+        'college_list': full_list.order_by('name'),
         'currState': stateQuery,
         'currName': nameQuery,
     }
